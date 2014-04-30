@@ -1,0 +1,1 @@
+C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\CordovaApp.jsproj;neutral

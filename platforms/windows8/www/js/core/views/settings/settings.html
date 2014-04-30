@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>settings</title>
+
+    <!-- WinJS references -->
+    <link href="settings.css" rel="stylesheet" />
+    <script src="settings.js"></script>
+</head>
+<body>
+    <div class="settings">
+        <h2>Clear databsae records</h2>
+        <div>
+            <button class="clear" data-win-bind="onclick: this.clearDatabase">Clear</button>
+        </div>
+        <h2>Populate databsae records</h2>
+        <div>
+            <button class="populate" data-win-bind="onclick: this.populateDatabase">Populate</button>
+        </div>
+        
+        <h2>Output</h2>
+        <p data-win-bind="textContent: this.viewModel.output"></p>
+    </div>
+</body>
+</html>

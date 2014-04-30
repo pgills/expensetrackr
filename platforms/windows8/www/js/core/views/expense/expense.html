@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>expense</title>
+
+    <!-- WinJS references -->
+
+    <link href="expense.css" rel="stylesheet" />
+    <script src="expense.js"></script>
+</head>
+<body>
+    <div class="expense">
+        <h1 data-win-bind="textContent: viewModel.title"></h1>
+        <h2 data-win-bind="textContent: viewModel.date"></h2>
+        <p data-win-bind="textContent: viewModel.text"></p>
+    </div>
+</body>
+</html>
