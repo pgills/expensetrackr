@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-    <Identity Name="ExpenseTrackr" Publisher="CN=$username$" Version="0.0.1.0" />
+    <Identity Name="com.expensetrackr" Publisher="CN=$username$" Version="0.0.1.0" />
     <Properties>
-        <DisplayName>HelloCordova</DisplayName>
+        <DisplayName>ExpenseTrackr</DisplayName>
         <PublisherDisplayName>Apache Cordova Team</PublisherDisplayName>
         <Logo>images\storelogo.png</Logo>
     </Properties>
@@ -14,8 +14,8 @@
         <Resource Language="x-generate" />
     </Resources>
     <Applications>
-        <Application Id="ExpenseTrackr" StartPage="www/index.html">
-            <VisualElements BackgroundColor="#464646" Description="CordovaApp" DisplayName="HelloCordova" ForegroundText="light" Logo="images\logo.png" SmallLogo="images\smalllogo.png">
+        <Application Id="com.expensetrackr" StartPage="www/index.html">
+            <VisualElements BackgroundColor="#464646" Description="CordovaApp" DisplayName="ExpenseTrackr" ForegroundText="light" Logo="images\logo.png" SmallLogo="images\smalllogo.png">
                 <DefaultTile ShowName="allLogos" />
                 <SplashScreen Image="images\splashscreen.png" />
             </VisualElements>

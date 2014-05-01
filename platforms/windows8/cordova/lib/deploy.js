@@ -34,7 +34,7 @@ var NONE = 0,
     NO_BUILD = 3;
 var build_type = NONE;
 
-var PACKAGE_NAME = 'ExpenseTrackr';
+var PACKAGE_NAME = 'com.expensetrackr';
 
 // help function
 function Usage() {
