@@ -3,7 +3,7 @@
 (function () {
     "use strict";
 
-    UserControl.define("/www/js/core/views/expenses/expenses.html", {
+    UserControl.define("js/core/views/expenses/expenses.html", {
 
         init: function (element, options) {
             this.viewModel = new App.ViewModels.Expenses();

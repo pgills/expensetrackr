@@ -7,7 +7,3 @@ c:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\bld\Debug\resourc
 c:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\bld\Debug\pri.resfiles
 c:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\bld\Debug\LanguageQualifiers.txt
 c:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\bld\Debug\ProjectArchitectures.txt
-c:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\bld\Debug\priconfig.xml.intermediate
-c:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\bld\Debug\layout.resfiles.intermediate
-c:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\bld\Debug\resources.resfiles.intermediate
-c:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\bld\Debug\pri.resfiles.intermediate
