@@ -3,7 +3,7 @@
 (function () {
     "use strict";
 
-    UserControl.define("/www/js/core/views/expense/expense.html", {
+    UserControl.define("js/core/views/expense/expense.html", {
         init: function (element, options) {
             var options = options || {};
             if (options.expense) {
