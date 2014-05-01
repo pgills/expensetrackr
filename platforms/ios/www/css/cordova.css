@@ -1,0 +1,223 @@
+﻿body {
+    padding-top: 70px;
+}
+.app {
+    width: 100%;
+    height: 100%;
+}
+
+.host {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.navigator, .pagecontrol {
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.list {
+    width: 100%;
+    height: 100%;
+}
+
+.win-container {
+    width: calc(100% - 30px);
+    height: 120px;
+}
+
+.win-itembox {
+    width: 100%;
+    height: 100%;
+}
+
+
+.item {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+}
+
+.thumb {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-color: #333;
+}
+
+.item-body {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc((100% - 215px)/2);
+}
+
+.item-date {
+    float: left;
+    margin-right: 10px;
+    width: calc((100% - 215px)/2);
+}
+
+.cost {
+    text-align: right;
+    float: left;
+    width: 85px;
+    height: 100%;
+}
+
+.spinner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+button, input[type=button], input[type=reset], input[type=submit] {
+    min-width: 0px;
+}
+
+
+
+
+/* ListView override on chrome */
+.win-listview .win-vertical .win-itemscontainer, .win-listview .win-vertical .win-itemsblock:not(.win-clip) {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.win-listview > .win-viewport.win-vertical {
+    -webkit-overflow-scrolling: touch;
+}
+
+.darker {
+    color: #bbb;
+}
+
+.win-listview .win-container:hover, .win-itemcontainer.win-container:hover {
+    outline: none;
+}
+
+button.navbar-brand.menu-button {
+    border-color: transparent;
+    
+    color: #fff;
+}
+
+.menu-button:hover:active, .menu-button:hover, .menu-button:active {
+    background-color: #444;
+}
+
+.big {
+    font-size: 32px;
+    padding-top: 12px;
+    padding-bottom: 0px;
+}
+
+
+/* New expense */
+.wizard
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 1);
+    overflow-y: auto;
+    opacity: 0;
+}
+
+.wizard .header {
+    height: 64px;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.wizard .pane {
+    float: left;
+    width: calc(50% - 30px);
+    height: calc(100% - 158px);
+}
+
+.wizard .pane.left {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.wizard .pane.right {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.wizard .location {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.wizard .picture {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.wizard #map {
+    position: relative;
+    width: calc(100% - 30px);
+    height: 300px;
+}
+
+.wizard #image {
+    width: calc(100% - 30px);
+    height: 300px;
+    background-color: #333;
+}
+
+.wizard .footer {
+    height: 64px;
+    margin-right: 20px;
+}
+
+.wizard .footer .buttons {
+    float: right;
+}
+
+.wizard .footer .buttons .cancel:hover:active {
+    background-color: #fff;
+    color: #111;
+}
+
+
+
+@media screen and (device-aspect-ratio: 2/3) {
+    .win-container {
+        height: 70px;
+    }
+
+    .item {
+        height: 70px;
+    }
+
+    .thumb {
+        width: 50px;
+        height: 50px;
+    }
+
+    .descrip {
+        display: none;  
+    }
+
+    .date {
+        display: none;
+    }
+
+    .cost {
+        display: none;
+    }
+}
