@@ -44,6 +44,7 @@
 
         <!-- ExpenseTrackr references -->
         <script src="js/core/services/locationService.js"></script>
+        <script src="js/core/services/mapsService.js"></script>
         <script src="js/core/services/localStorageService.js"></script>
         <script src="js/core/services/expenseService.js"></script>
         <script src="js/core/services/cameraService.js"></script>
@@ -81,7 +82,7 @@
                             <li>
                                 <a href="#" class="navbar-brand menu-button" onclick="App.DataContext.resetData()"><span class="glyphicon glyphicon-minus-sign"></span> New data</a></li>
                             <li>
-                            <li><a href="#" class="navbar-brand menu-button" onclick="App.DataContext.showExpense()"><span class="glyphicon glyphicon-pencil"></span> New expense</a></li>
+                            <li><a href="#" class="navbar-brand menu-button" onclick="App.DataContext.newExpense()"><span class="glyphicon glyphicon-pencil"></span> New expense</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->

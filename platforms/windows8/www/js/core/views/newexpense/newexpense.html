@@ -17,15 +17,14 @@
             <label>Date: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.date Binding.twoWayChangeBind" /><br />
             <label>Text: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.text Binding.twoWayChangeBind" /><br />
             <label>Cost: </label>&nbsp;<input type="number" data-win-bind="value: this.viewModel.expense.cost Binding.twoWayChangeBind" /><br />
-            <label>Long: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.long Binding.twoWayChangeBind" />&nbsp;
+            <label>Long: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.long Binding.twoWayChangeBind" /><br />
             <label>Lat: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.lat Binding.twoWayChangeBind" />&nbsp;<button data-win-bind="onclick: this.getLocation"><span class="glyphicon glyphicon-globe"></span> Get location</button><br />
             <label>Url: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.url Binding.twoWayChangeBind" /><br />
             <label>Id: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.id Binding.twoWayChangeBind" readonly="readonly" disabled="disabled"/><br />
             
             <input type="submit" value="Submit" />
         </form>
-
-        <div id="map">
+        <img src="#" data-win-name="map" />
         </div>
     </div>
 </body>

@@ -52,6 +52,7 @@ www\js\core\services\cameraService.js
 www\js\core\services\expenseService.js
 www\js\core\services\localStorageService.js
 www\js\core\services\locationService.js
+www\js\core\services\mapsService.js
 www\js\core\unittest\service\expenses.css
 www\js\core\unittest\service\expenses.html
 www\js\core\unittest\service\expenses.js

@@ -12,6 +12,9 @@
     console.log("App: Define App.DataContext Namespace");
 
     WinJS.Namespace.define("App.DataContext", {
+        newExpense: WinJS.UI.eventHandler(function (e) {
+            WinJS.Navigation.navigate("js/core/views/newexpense/newexpense.html");
+        }),
         Expenses: _expenses,
         NewExpense: _newExpense,
         getLocation: WinJS.UI.eventHandler(function (e) {

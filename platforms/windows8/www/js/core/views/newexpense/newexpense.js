@@ -17,7 +17,7 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
-            var el = document.querySelector("#map");
+           /* var el = document.querySelector("#map");
             var mapOptions ={ credentials: "Ah3HFyLsjxFXG_nUBvvA2F1DEupYsBLn_EPMRAjwt1XHhMkR-XJPZGjbyXlDRUNO" };
             var that = this;
             var initMap = function () {
@@ -31,11 +31,11 @@
 
             // Initial Bing Maps
             Microsoft.Maps.loadModule('Microsoft.Maps.Map', { callback: initMap, culture: "en-us", homeRegion: "US" });
-            this.map = new Microsoft.Maps.Map(el, mapOptions);
+            this.map = new Microsoft.Maps.Map(el, mapOptions);*/
         },
 
         dispose: function () {
-            this.map.dispose();
+            //this.map.dispose();
         },
 
         unload: function () {
@@ -56,14 +56,14 @@
             ev.preventDefault();
             var that = this;
             this.viewModel.getLocation().then(function (position) {
-                that.viewModel.expense.long = position.coords.longitude;
-                that.viewModel.expense.lat = position.coords.latitude;
-                var center = new Microsoft.Maps.Location(that.viewModel.expense.lat, that.viewModel.expense.long)
-                that.map.setView({ center: center, mapTypeId: Microsoft.Maps.MapTypeId.auto, zoom: 18 });
+                //that.viewModel.expense.long = position.coords.longitude;
+                //that.viewModel.expense.lat = position.coords.latitude;
 
-                // Add a pin to the center of the map
-                var pin = new Microsoft.Maps.Pushpin(center, { text: '' });
-                that.map.entities.push(pin);
+                return App.Services.Maps.getMap(position.coords.longitude, position.coords.latitude);
+            }).then(function (data) {
+                that.map.src = data.url;
+                that.map.height = data.imageHeight;
+                that.map.width = data.imageWidth;
             });
         },
 

@@ -122,6 +122,9 @@
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\services\locationService.js">
       <PackagePath>www\js\core\services\locationService.js</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\services\mapsService.js">
+      <PackagePath>www\js\core\services\mapsService.js</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\service\expenses.js">
       <PackagePath>www\js\core\unittest\service\expenses.js</PackagePath>
     </AppxPackagedFile>
