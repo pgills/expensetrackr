@@ -39,8 +39,8 @@
         <script src="js/core/lib/winjs/js/ui.js"></script>
 
         <!-- Azure Mobile Services references -->
-        <script src="js/core/lib/MobileServices.js"></script>
-        <!--<script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.1.3.min.js"></script>-->
+       <!--<script src="js/core/lib/MobileServices.js"></script>-->
+        <script src="http://ajax.aspnetcdn.com/ajax/mobileservices/MobileServices.Web-1.1.3.min.js"></script>
 
         <!-- ExpenseTrackr references -->
         <script src="js/core/services/locationService.js"></script>
@@ -60,6 +60,9 @@
         <title>ExpenseTrackr</title>
     </head>
     <body>
+        <script>
+        alert("hi");
+        </script>
         <div class="app">
             <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top: 20px;">
                 <div class="container-fluid">
@@ -85,7 +88,7 @@
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
-            <div id="contenthost" class="navigator" data-win-control="App.Views.PageControlNavigator" data-win-options="{home: '/www/js/core/views/expenses/expenses.html'}"></div>
+            <div id="contenthost" class="navigator" data-win-control="App.Views.PageControlNavigator" data-win-options="{home: 'js/core/views/expenses/expenses.html'}"></div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
