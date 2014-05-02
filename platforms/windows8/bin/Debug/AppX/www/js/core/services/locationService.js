@@ -1,4 +1,7 @@
 ﻿(function (WinJS) {
+
+    var _key = "Ah3HFyLsjxFXG_nUBvvA2F1DEupYsBLn_EPMRAjwt1XHhMkR-XJPZGjbyXlDRUNO";
+
     WinJS.Namespace.define("App.Services",
         {
             Location: WinJS.Class.define(function ctor() {

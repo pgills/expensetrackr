@@ -11,20 +11,41 @@
 </head>
 <body>
     <div class="newexpense">
-        <h1>Add a new expense</h1>
-        <form data-win-bind="onsubmit: this.submit">
-            <label>Title: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.title Binding.twoWayChangeBind" /><br />
-            <label>Date: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.date Binding.twoWayChangeBind" /><br />
-            <label>Text: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.text Binding.twoWayChangeBind" /><br />
-            <label>Cost: </label>&nbsp;<input type="number" data-win-bind="value: this.viewModel.expense.cost Binding.twoWayChangeBind" /><br />
-            <label>Long: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.long Binding.twoWayChangeBind" /><br />
-            <label>Lat: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.lat Binding.twoWayChangeBind" />&nbsp;<button data-win-bind="onclick: this.getLocation"><span class="glyphicon glyphicon-globe"></span> Get location</button><br />
-            <label>Url: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.url Binding.twoWayChangeBind" /><br />
-            <label>Id: </label>&nbsp;<input type="text" data-win-bind="value: this.viewModel.expense.id Binding.twoWayChangeBind" readonly="readonly" disabled="disabled"/><br />
-            
-            <input type="submit" value="Submit" />
-        </form>
-        <img src="#" data-win-name="map" />
+        <div class="header win-type-xx-large">New expense</div>
+        <div class="pane left">
+            <h2>Description</h2>
+            <input id="title" class="win-type-large" type="text" value="New Expense" data-win-bind="value: viewModel.expense.title Binding.twoWayChangeBind" /><br />
+            <h2 class="location" data-win-bind="onclick: getLocation">Location <span class="glyphicon glyphicon-globe"></span></h2>
+            <div class="mapContainer" data-win-name="mapContainer"
+                          data-win-control="WinJS.UI.ItemContainer"
+                          data-win-options="{selectionDisabled: true}">
+                <div class="host">
+                    <div class="image" data-win-name="map"></div>
+                </div>
+            </div>
+            <div class="win-type-x-small latlong" data-win-name="latlong">
+                <span>Lat: </span><span data-win-bind="textContent: viewModel.expense.lat"></span>
+                <span>Long: </span><span data-win-bind="textContent: viewModel.expense.long"></span>
+            </div>
+            <input id="lat" class="win-type-large title lat" style="display:none;" type="text" value="Lat" data-win-bind="value: viewModel.expense.lat Binding.twoWayChangeBind" /><br />
+            <input id="long" class="win-type-large title long" style="display:none", type="text" value="Long" data-win-bind="value: viewModel.expense.long Binding.twoWayChangeBind" />
+        </div>
+        <div class="pane right">
+            <h2>Amount</h2>
+            <input id="cost" type="number" value="0" data-win-bind="value: viewModel.expense.cost Binding.twoWayChangeBind" /><br />
+            <h2 class="picture" data-win-bind="onclick: getPicture">Picture <span class="glyphicon glyphicon-camera"></span></h2>
+            <div class="pictureContainer" data-win-name="pictureContainer"
+                                          data-win-control="WinJS.UI.ItemContainer"
+                                          data-win-options="{selectionDisabled: true}">
+                <div class="host">
+                    <div class="image" data-win-name="picture"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="buttons">
+                <button type="submit" data-win-bind="onclick: submit">Submit</button>
+            </div>
         </div>
     </div>
 </body>

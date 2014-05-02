@@ -2,8 +2,6 @@
     WinJS.Namespace.define("App.Services",
         {
             Camera: WinJS.Class.define(function ctor() {
-                
-
                 if(navigator.camera) {
                     this._camera = navigator.camera;
                 }
@@ -17,7 +15,12 @@
                         }, function (error) {
                             e(error);
                         }, {
-                            quality: 20, destinationType: 0, targetWidth: 100, targetHeight: 100
+                            quality : 25,
+                            destinationType : Camera.DestinationType.DATA_URL,
+                            sourceType : Camera.PictureSourceType.CAMERA,
+                            encodingType: Camera.EncodingType.PNG,
+                            allowEdit: true,
+                            saveToPhotoAlbum: false 
                         });
                     });
 
