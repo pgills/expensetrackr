@@ -38,6 +38,7 @@
                 return _locationService.getCurrentPosition().then(function (position) {
                     that.expense.long = position.coords.longitude;
                     that.expense.lat = position.coords.latitude;
+
                     return WinJS.Promise.wrap(position);
                 })
             },

@@ -105,7 +105,7 @@
                     date: expense.date,
                     datestring: date.toDateString(),
                     timestring: date.toTimeString(),
-                    text: "San Francisco, CA",
+                    text: expense.text,
                     url: (expense.url !== "") ? expense.url : "img/map1.png",
                     status: 1
                 };

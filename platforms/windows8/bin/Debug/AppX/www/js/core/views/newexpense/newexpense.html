@@ -23,10 +23,7 @@
                     <div class="image" data-win-name="map"></div>
                 </div>
             </div>
-            <div class="win-type-x-small latlong" data-win-name="latlong">
-                <span>Lat: </span><span data-win-bind="textContent: viewModel.expense.lat"></span>
-                <span>Long: </span><span data-win-bind="textContent: viewModel.expense.long"></span>
-            </div>
+            <div class="win-type-x-small address" data-win-bind="textContent: viewModel.expense.text" data-win-name="address"></div>
             <input id="lat" class="win-type-large title lat" style="display:none;" type="text" value="Lat" data-win-bind="value: viewModel.expense.lat Binding.twoWayChangeBind" /><br />
             <input id="long" class="win-type-large title long" style="display:none", type="text" value="Long" data-win-bind="value: viewModel.expense.long Binding.twoWayChangeBind" />
         </div>

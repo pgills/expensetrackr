@@ -42,14 +42,25 @@
             ev.preventDefault();
             var that = this;
             this.viewModel.getLocation().then(function (position) {
-                return App.Services.Maps.getMap(position.coords.longitude, position.coords.latitude);
+                var promises = [
+                    App.Services.Maps.getMap(position.coords.longitude, position.coords.latitude),
+                    App.Services.Maps.getAddress(position.coords.longitude, position.coords.latitude)
+                ];
+                return WinJS.Promise.join(promises);
             }).then(function (data) {
+                var mapImage = data[0];
+                var address = data[1];
+
+                // Update address
+                that.viewModel.expense.text = address.locality + "," + address.adminDistrict;
+
+                // Load map image
                 var i = new Image();
                 i.onload = function (ev) {
                     that.map.style.backgroundImage = "url('" + i.src + "')";
-                    WinJS.UI.Animation.enterContent([that.map, that.latlong]);
+                    WinJS.UI.Animation.enterContent([that.map, that.address]);
                 };
-                i.src = data.url;
+                i.src = mapImage.url;
             });
         },
 
