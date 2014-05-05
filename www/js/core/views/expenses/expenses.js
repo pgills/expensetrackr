@@ -22,7 +22,7 @@
 
         updateLayout: function (element) {
             /// <param name="element" domElement="true" />
-
+            this.listView.winControl.forceLayout();
             // TODO: Respond to changes in layout.
         },
 

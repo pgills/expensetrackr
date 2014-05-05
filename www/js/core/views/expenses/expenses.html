@@ -33,7 +33,7 @@
         <div class="group-template" data-win-control="WinJS.Binding.Template">
             <h2 data-win-bind="textContent: text">Status</h2>
         </div>
-        <div class="listView" data-win-control="WinJS.UI.ListView"
+        <div class="listView" data-win-name="listView" data-win-control="WinJS.UI.ListView"
              data-win-options="{itemTemplate: select('.template'), groupTemplate: select('.group-template'), layout: {type: WinJS.UI.ListLayout}}"
              data-win-bind="winControl.itemDataSource: viewModel.list.dataSource;
                             winControl.oniteminvoked: this.itemInvoked;"></div>
