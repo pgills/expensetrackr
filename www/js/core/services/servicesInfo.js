@@ -1,12 +1,12 @@
 WinJS.Namespace.define("App.Services.Info", {
                        
-    // Bing Maps API Key
-    BingMapsApiKey: "Ah3HFyLsjxFXG_nUBvvA2F1DEupYsBLn_EPMRAjwt1XHhMkR-XJPZGjbyXlDRUNO",
+    // Insert Bing Maps API Key here
+    BingMapsApiKey: "",
     
-    // Azure Mobile Services API Key
-    AzureMobileServicesApiKey: "AtFyFCVeANFXiKZEzyENpGkjHhOvfp99",
+    // Insert Azure Mobile Services API Key here
+    AzureMobileServicesApiKey: "",
     
-    // Azure Mobile Services Url
-    AzureMobileServicesUrl: "https://snc.azure-mobile.net/"
+    // Insert Azure Mobile Services Url here
+    AzureMobileServicesUrl: ""
 
 });
