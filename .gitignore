@@ -1,0 +1,7 @@
+platforms/windows8/bin/
+platforms/windows8/bld/
+platforms/windows8/Backup/CordovaApp/CordovaApp.jsproj
+platforms/windows8/Backup/CordovaApp/package.appxmanifest
+platforms/windows8/CordovaApp.v12.suo
+platforms/android/bin/
+plarforms/android/ant-build/

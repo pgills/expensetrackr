@@ -74,6 +74,8 @@
                     WinJS.UI.Animation.enterContent(that.picture);
                 };
                 i.src = "data:image/png;base64," + imageData;
+            }, function (error) {
+                // user did not capture picture
             });
         },
 

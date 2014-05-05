@@ -89,9 +89,9 @@
 
         refresh: WinJS.UI.eventHandler(function (e) {
             _exservice.refresh().then(function (items) {
-                var l = document.querySelector(".list").winControl;
-                if(l) {
-                    l.itemDataSource = new WinJS.Binding.List(items).dataSource;
+                var listEl = document.querySelector(".listView");
+                if (listEl && listEl.winControl) {
+                    listEl.winControl.itemDataSource = new WinJS.Binding.List(items).dataSource;
                 }
             })
         }),

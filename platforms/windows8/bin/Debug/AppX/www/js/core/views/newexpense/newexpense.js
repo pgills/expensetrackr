@@ -68,12 +68,15 @@
             ev.preventDefault();
             var that = this;
             this.viewModel.getPicture().then(function (imageData) {
+                debugger;
                 var i = new Image();
                 i.onload = function (ev) {
                     that.picture.style.backgroundImage = "url('" + i.src + "')";
                     WinJS.UI.Animation.enterContent(that.picture);
                 };
                 i.src = "data:image/png;base64," + imageData;
+            }, function (error) {
+                debugger;
             });
         },
 
