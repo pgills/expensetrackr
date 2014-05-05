@@ -51,6 +51,7 @@ www\js\core\services\expenseService.js
 www\js\core\services\localStorageService.js
 www\js\core\services\locationService.js
 www\js\core\services\mapsService.js
+www\js\core\services\servicesInfo.js
 www\js\core\viewModels\expense.js
 www\js\core\viewModels\expenses.js
 www\js\core\viewModels\newExpense.js

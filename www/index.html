@@ -76,13 +76,13 @@
                         </button>
                         <button type="button" class="navbar-brand backbutton" data-win-control="WinJS.UI.BackButton"></button>
                         <a class="navbar-brand big" href="#">ExpenseTrackr</a>
-                        <a class="navbar-brand menu-button" href="#" onclick="App.DataContext.refresh()"><span class="glyphicon glyphicon-refresh"></span></a>
+                        
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="#" class="navbar-brand menu-button" onclick="App.DataContext.resetData()"><span class="glyphicon glyphicon-minus-sign"></span> New data</a></li>
+                                <a class="navbar-brand menu-button" href="#" onclick="App.DataContext.refresh()"><span class="glyphicon glyphicon-refresh"></span> Refresh</a>
                             <li>
                             <li><a href="#" class="navbar-brand menu-button" onclick="App.DataContext.newExpense()"><span class="glyphicon glyphicon-pencil"></span> New expense</a></li>
                         </ul>

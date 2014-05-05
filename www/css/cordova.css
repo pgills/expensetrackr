@@ -118,34 +118,15 @@ button.navbar-brand.menu-button {
     padding-bottom: 0px;
 }
 
-@media screen and (device-aspect-ratio: 2/3) {
-    .win-container {
-        height: 70px;
-    }
-
-    .item {
-        height: 70px;
-    }
-
-    .thumb {
-        width: 50px;
-        height: 50px;
-    }
-
-    .descrip {
-        display: none;  
-    }
-
-    .date {
-        display: none;
-    }
-
-    .cost {
-        display: none;
-    }
+#et.mobile .big {
+    font-size: 22px;
+    padding-top: 22px;
+    padding-bottom: 0px;
 }
 
-#et.mobile .backbutton, #et.mobile .backbutton .win-back {
+
+
+#et.mobile .backbutton {
     width: 30px;
     height: 30px;
     font-size: 8pt;

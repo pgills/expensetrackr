@@ -6,16 +6,14 @@
     // Location data:
     // http://dev.virtualearth.net/REST/v1/Locations/47.64054,-122.12934?o=xml&key=BingMapsKey
 
-    // Bing Maps API Key
-    var _key = "Ah3HFyLsjxFXG_nUBvvA2F1DEupYsBLn_EPMRAjwt1XHhMkR-XJPZGjbyXlDRUNO";
-
+ 
     // Base urls
     var _imageUrl = "http://dev.virtualearth.net/REST/v1/Imagery/Metadata/Road/";
     var _imageUrlParams = "?zl=15&c=en";
     var _locationUrl = "http://dev.virtualearth.net/REST/v1/Locations/";
     var _locationUrlParams = "?";
     var _format = "&o=json";
-    var _urlKey = "&key=" + _key;
+    var _urlKey = "&key=" + App.Services.Info.BingMapsApiKey;
 
     WinJS.Namespace.define("App.Services.Maps", {
         getMap: function (long, lat) {
