@@ -79,6 +79,7 @@ www\js\core\views\newexpense\newexpense.js
 www\js\core\views\settings\settings.css
 www\js\core\views\settings\settings.html
 www\js\core\views\settings\settings.js
+www\js\core\views\viewsUtil.js
 www\js\index.js
 www\plugins\org.apache.cordova.camera\src\windows8\CameraProxy.js
 www\plugins\org.apache.cordova.camera\www\Camera.js

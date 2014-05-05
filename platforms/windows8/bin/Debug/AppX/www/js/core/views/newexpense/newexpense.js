@@ -68,7 +68,6 @@
             ev.preventDefault();
             var that = this;
             this.viewModel.getPicture().then(function (imageData) {
-                debugger;
                 var i = new Image();
                 i.onload = function (ev) {
                     that.picture.style.backgroundImage = "url('" + i.src + "')";
@@ -76,7 +75,7 @@
                 };
                 i.src = "data:image/png;base64," + imageData;
             }, function (error) {
-                debugger;
+                // user did not capture picture
             });
         },
 

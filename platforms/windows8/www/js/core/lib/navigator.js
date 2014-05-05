@@ -113,6 +113,8 @@
                 // Responds to resize events and call the updateLayout function
                 // on the currently loaded page.
                 _resized: function (args) {
+                    App.Views.Util.setPlatformView();
+
                     if (this.pageControl && this.pageControl.updateLayout) {
                         this.pageControl.updateLayout.call(this.pageControl, this.pageElement);
                     }
