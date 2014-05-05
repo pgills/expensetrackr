@@ -144,3 +144,10 @@ button.navbar-brand.menu-button {
         display: none;
     }
 }
+
+#et.mobile .backbutton, #et.mobile .backbutton .win-back {
+    width: 30px;
+    height: 30px;
+    font-size: 8pt;
+    line-height: 26px;
+}

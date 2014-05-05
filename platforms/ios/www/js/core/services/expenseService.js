@@ -219,7 +219,7 @@
             url: 'img/map6.png'
         }
     ];
- alert("hi");
+
     var _apiKey = App.Services.Info.AzureMobileServicesApiKey;
     var _apiUrl = App.Services.Info.AzureMobileServicesUrl;
     var _client = null;

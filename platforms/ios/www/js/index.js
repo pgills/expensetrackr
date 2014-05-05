@@ -44,6 +44,9 @@ var app = {
         WinJS.Navigation.history = WinJS.Application.sessionState.history || {};
         WinJS.Navigation.history.current.initialPlaceholder = true;
 
+        // Determine if we are mobile or not
+        App.Views.Util.setPlatformView();
+
         // Process WinJS Controls
         WinJS.UI.processAll().then(function (c) {
             // Navigate to the main part of the app
