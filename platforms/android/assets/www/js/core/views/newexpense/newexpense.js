@@ -3,39 +3,25 @@
 (function () {
     "use strict";
 
-    UserControl.define("/www/js/core/views/newexpense/newexpense.html", {
+    UserControl.define("js/core/views/newexpense/newexpense.html", {
         init: function (element, options) {
             this.viewModel = new App.ViewModels.NewExpense();
             this.changeProgress = WinJS.UI.eventHandler(this._changeProgress.bind(this));
             this.submit = WinJS.UI.eventHandler(this._submit.bind(this));
             this.getLocation = WinJS.UI.eventHandler(this._getLocation.bind(this));
-
-           
-            
+            this.getPicture = WinJS.UI.eventHandler(this._getPicture.bind(this));
         },
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
-            var el = document.querySelector("#map");
-            var mapOptions ={ credentials: "Ah3HFyLsjxFXG_nUBvvA2F1DEupYsBLn_EPMRAjwt1XHhMkR-XJPZGjbyXlDRUNO" };
-            var that = this;
-            var initMap = function () {
-                if(!this.map) {
-                    if (el) {
-                        this.map = new Microsoft.Maps.Map(el, mapOptions);
-                    }
-                }
-
-            }
-
-            // Initial Bing Maps
-            Microsoft.Maps.loadModule('Microsoft.Maps.Map', { callback: initMap, culture: "en-us", homeRegion: "US" });
-            this.map = new Microsoft.Maps.Map(el, mapOptions);
+            this.mapContainer.winControl.addEventListener("invoked", this.getLocation);
+            this.pictureContainer.winControl.addEventListener("invoked", this.getPicture);
         },
 
         dispose: function () {
-            this.map.dispose();
+            this.mapContainer.winControl.removeEventListener("invoked", this.getLocation);
+            this.pictureContainer.winControl.removeEventListener("invoked", this.getPicture);
         },
 
         unload: function () {
@@ -56,34 +42,45 @@
             ev.preventDefault();
             var that = this;
             this.viewModel.getLocation().then(function (position) {
-                that.viewModel.expense.long = position.coords.longitude;
-                that.viewModel.expense.lat = position.coords.latitude;
-                var center = new Microsoft.Maps.Location(that.viewModel.expense.lat, that.viewModel.expense.long)
-                that.map.setView({ center: center, mapTypeId: Microsoft.Maps.MapTypeId.auto, zoom: 18 });
+                var promises = [
+                    App.Services.Maps.getMap(position.coords.longitude, position.coords.latitude),
+                    App.Services.Maps.getAddress(position.coords.longitude, position.coords.latitude)
+                ];
+                return WinJS.Promise.join(promises);
+            }).then(function (data) {
+                var mapImage = data[0];
+                var address = data[1];
 
-                // Add a pin to the center of the map
-                var pin = new Microsoft.Maps.Pushpin(center, { text: '' });
-                that.map.entities.push(pin);
+                // Update address
+                that.viewModel.expense.text = address.locality + "," + address.adminDistrict;
+
+                // Load map image
+                var i = new Image();
+                i.onload = function (ev) {
+                    that.map.style.backgroundImage = "url('" + i.src + "')";
+                    WinJS.UI.Animation.enterContent([that.map, that.address]);
+                };
+                i.src = mapImage.url;
+            });
+        },
+
+        _getPicture: function (ev) {
+            ev.preventDefault();
+            var that = this;
+            this.viewModel.getPicture().then(function (imageData) {
+                var i = new Image();
+                i.onload = function (ev) {
+                    that.picture.style.backgroundImage = "url('" + i.src + "')";
+                    WinJS.UI.Animation.enterContent(that.picture);
+                };
+                i.src = "data:image/png;base64," + imageData;
             });
         },
 
         _submit: function (ev) {
             ev.preventDefault();
-            var that = this;
-
-            var ex = {
-                title: this.viewModel.expense.title,
-                text: this.viewModel.expense.text,
-                long: this.viewModel.expense.long,
-                lat: this.viewModel.expense.lat,
-                date: new Date(),
-                url: this.viewModel.expense.url,
-                cost: this.viewModel.expense.cost,
-                status: App.Models.Expense.submitted
-            };
-
-            this.viewModel.push(ex).then(function (expense) {
-                that.viewModel.expense = expense;
+            this.viewModel.push().then(function (expense) {
+                WinJS.Navigation.navigate("js/core/views/expenses/expenses.html", {expense: expense});
             }, function (error) {
                 console.log(error);
             });

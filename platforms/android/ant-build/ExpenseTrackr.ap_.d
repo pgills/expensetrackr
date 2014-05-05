@@ -85,6 +85,7 @@
 /Users/edgarbanguero/Documents/ExpenseTrackr/platforms/android/assets/www/js/core/services/expenseService.js \
 /Users/edgarbanguero/Documents/ExpenseTrackr/platforms/android/assets/www/js/core/services/localStorageService.js \
 /Users/edgarbanguero/Documents/ExpenseTrackr/platforms/android/assets/www/js/core/services/locationService.js \
+/Users/edgarbanguero/Documents/ExpenseTrackr/platforms/android/assets/www/js/core/services/mapsService.js \
 /Users/edgarbanguero/Documents/ExpenseTrackr/platforms/android/assets/www/js/core/unittest/service \
 /Users/edgarbanguero/Documents/ExpenseTrackr/platforms/android/assets/www/js/core/unittest/viewmodel \
 /Users/edgarbanguero/Documents/ExpenseTrackr/platforms/android/assets/www/js/core/unittest/service/expenses.css \

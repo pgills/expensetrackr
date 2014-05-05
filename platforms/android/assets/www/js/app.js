@@ -12,6 +12,9 @@
     console.log("App: Define App.DataContext Namespace");
 
     WinJS.Namespace.define("App.DataContext", {
+        newExpense: WinJS.UI.eventHandler(function (e) {
+            WinJS.Navigation.navigate("js/core/views/newexpense/newexpense.html");
+        }),
         Expenses: _expenses,
         NewExpense: _newExpense,
         getLocation: WinJS.UI.eventHandler(function (e) {
@@ -86,9 +89,9 @@
 
         refresh: WinJS.UI.eventHandler(function (e) {
             _exservice.refresh().then(function (items) {
-                var l = document.querySelector(".list").winControl;
-                if(l) {
-                    l.itemDataSource = new WinJS.Binding.List(items).dataSource;
+                var listEl = document.querySelector(".listView");
+                if (listEl && listEl.winControl) {
+                    listEl.winControl.itemDataSource = new WinJS.Binding.List(items).dataSource;
                 }
             })
         }),

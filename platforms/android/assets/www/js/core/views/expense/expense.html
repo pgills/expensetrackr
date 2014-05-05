@@ -11,9 +11,22 @@
 </head>
 <body>
     <div class="expense">
-        <h1 data-win-bind="textContent: viewModel.title"></h1>
-        <h2 data-win-bind="textContent: viewModel.date"></h2>
-        <p data-win-bind="textContent: viewModel.text"></p>
+        <div class="item">
+                <img class="thumb" data-win-bind="src: viewModel.url" />
+                <div class="item-body">
+                    <div class="title win-type-x-large win-type-ellipsis" data-win-bind="textContent: viewModel.title"></div>
+                    <div class="text descrip win-type-x-large darker win-type-ellipsis" data-win-bind="textContent: viewModel.text"></div>
+                </div>
+                <div class="item-date">
+                    <div class="win-type-x-large win-type-ellipsis" data-win-bind="textContent: viewModel.datestring"></div>
+                    <div class="win-type-x-large win-type-ellipsis darker" data-win-bind="textContent: viewModel.timestring"></div>
+                </div>
+                <div class="cost win-type-x-large">
+                    <span>$</span>
+                    <span data-win-bind="textContent: viewModel.cost">0</span>
+                    <div class="darker">USD</div>
+                </div>
+            </div>
     </div>
 </body>
 </html>

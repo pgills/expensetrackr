@@ -96,7 +96,21 @@
         }, 
         {
             push: function (expense) {
-                return _service.push(expense);
+                var date = new Date();
+                var ex = {
+                    title: expense.title,
+                    cost: expense.cost,
+                    lat: expense.lat,
+                    long: expense.long,
+                    date: expense.date,
+                    datestring: date.toDateString(),
+                    timestring: date.toTimeString(),
+                    text: expense.text,
+                    url: (expense.url !== "") ? expense.url : "img/map1.png",
+                    status: 1
+                };
+
+                return _service.push(ex);
             },
 
             list: function () {
