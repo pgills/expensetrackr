@@ -219,9 +219,9 @@
             url: 'img/map6.png'
         }
     ];
-
-    var _apiKey = "AtFyFCVeANFXiKZEzyENpGkjHhOvfp99";
-    var _apiUrl = "https://snc.azure-mobile.net/";
+ alert("hi");
+    var _apiKey = App.Services.Info.AzureMobileServicesApiKey;
+    var _apiUrl = App.Services.Info.AzureMobileServicesUrl;
     var _client = null;
     var _storage = new App.Services.LocalStorageService();
     var _items = null;
