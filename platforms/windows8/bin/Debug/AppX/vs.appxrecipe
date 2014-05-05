@@ -16,7 +16,7 @@
     <AppXManifest Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-05-05T22:00:04.207</Modified>
+      <Modified>2014-05-05T22:12:31.291</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -42,423 +42,363 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\img\logo.png">
       <PackagePath>www\img\logo.png</PackagePath>
-      <Modified>2014-05-05T22:00:01.537</Modified>
+      <Modified>2014-05-05T22:12:28.254</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\img\map1.png">
       <PackagePath>www\img\map1.png</PackagePath>
-      <Modified>2014-05-05T22:00:01.539</Modified>
+      <Modified>2014-05-05T22:12:28.256</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\img\map2.png">
       <PackagePath>www\img\map2.png</PackagePath>
-      <Modified>2014-05-05T22:00:01.540</Modified>
+      <Modified>2014-05-05T22:12:28.258</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\img\map3.png">
       <PackagePath>www\img\map3.png</PackagePath>
-      <Modified>2014-05-05T22:00:01.542</Modified>
+      <Modified>2014-05-05T22:12:28.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\img\map4.png">
       <PackagePath>www\img\map4.png</PackagePath>
-      <Modified>2014-05-05T22:00:01.544</Modified>
+      <Modified>2014-05-05T22:12:28.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\img\map5.png">
       <PackagePath>www\img\map5.png</PackagePath>
-      <Modified>2014-05-05T22:00:01.545</Modified>
+      <Modified>2014-05-05T22:12:28.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\img\map6.png">
       <PackagePath>www\img\map6.png</PackagePath>
-      <Modified>2014-05-05T22:00:01.547</Modified>
+      <Modified>2014-05-05T22:12:28.266</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\cordova.js">
       <PackagePath>www\cordova.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.371</Modified>
+      <Modified>2014-05-05T22:12:29.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\cordova_plugins.js">
       <PackagePath>www\cordova_plugins.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.630</Modified>
+      <Modified>2014-05-05T22:12:29.485</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\app.js">
       <PackagePath>www\js\app.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.560</Modified>
+      <Modified>2014-05-05T22:12:28.272</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\js\bootstrap.js">
       <PackagePath>www\js\core\lib\bootstrap_nav\js\bootstrap.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.634</Modified>
+      <Modified>2014-05-05T22:12:28.359</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\js\bootstrap.min.js">
       <PackagePath>www\js\core\lib\bootstrap_nav\js\bootstrap.min.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.653</Modified>
+      <Modified>2014-05-05T22:12:28.375</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\jquery\jquery-2.1.0.intellisense.js">
       <PackagePath>www\js\core\lib\jquery\jquery-2.1.0.intellisense.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.691</Modified>
+      <Modified>2014-05-05T22:12:28.424</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\jquery\jquery-2.1.0.js">
       <PackagePath>www\js\core\lib\jquery\jquery-2.1.0.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.728</Modified>
+      <Modified>2014-05-05T22:12:28.472</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\jquery\jquery-2.1.0.min.js">
       <PackagePath>www\js\core\lib\jquery\jquery-2.1.0.min.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.761</Modified>
+      <Modified>2014-05-05T22:12:28.511</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\MobileServices.intellisense.js">
       <PackagePath>www\js\core\lib\MobileServices.intellisense.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.771</Modified>
+      <Modified>2014-05-05T22:12:28.521</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\MobileServices.js">
       <PackagePath>www\js\core\lib\MobileServices.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.780</Modified>
+      <Modified>2014-05-05T22:12:28.565</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\MobileServices.min.js">
       <PackagePath>www\js\core\lib\MobileServices.min.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.807</Modified>
+      <Modified>2014-05-05T22:12:28.596</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\navigator.js">
       <PackagePath>www\js\core\lib\navigator.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.809</Modified>
+      <Modified>2014-05-05T22:12:28.597</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\userControl.js">
       <PackagePath>www\js\core\lib\userControl.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.811</Modified>
+      <Modified>2014-05-05T22:12:28.599</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\winjs\js\base.js">
       <PackagePath>www\js\core\lib\winjs\js\base.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.890</Modified>
+      <Modified>2014-05-05T22:12:28.691</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\winjs\js\base.min.js">
       <PackagePath>www\js\core\lib\winjs\js\base.min.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.933</Modified>
+      <Modified>2014-05-05T22:12:28.737</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\winjs\js\en-US\base.strings.js">
       <PackagePath>www\js\core\lib\winjs\js\en-US\base.strings.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.936</Modified>
+      <Modified>2014-05-05T22:12:28.740</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\winjs\js\en-US\ui.strings.js">
       <PackagePath>www\js\core\lib\winjs\js\en-US\ui.strings.js</PackagePath>
-      <Modified>2014-05-05T22:00:01.945</Modified>
+      <Modified>2014-05-05T22:12:28.750</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\winjs\js\ui.js">
       <PackagePath>www\js\core\lib\winjs\js\ui.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.124</Modified>
+      <Modified>2014-05-05T22:12:28.945</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\winjs\js\ui.min.js">
       <PackagePath>www\js\core\lib\winjs\js\ui.min.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.259</Modified>
+      <Modified>2014-05-05T22:12:29.102</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\models\expenses.js">
       <PackagePath>www\js\core\models\expenses.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.265</Modified>
+      <Modified>2014-05-05T22:12:29.106</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\services\cameraService.js">
       <PackagePath>www\js\core\services\cameraService.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.269</Modified>
+      <Modified>2014-05-05T22:12:29.112</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\services\expenseService.js">
       <PackagePath>www\js\core\services\expenseService.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.279</Modified>
+      <Modified>2014-05-05T22:12:29.121</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\services\localStorageService.js">
       <PackagePath>www\js\core\services\localStorageService.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.281</Modified>
+      <Modified>2014-05-05T22:12:29.124</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\services\locationService.js">
       <PackagePath>www\js\core\services\locationService.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.284</Modified>
+      <Modified>2014-05-05T22:12:29.130</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\services\mapsService.js">
       <PackagePath>www\js\core\services\mapsService.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.286</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\service\expenses.js">
-      <PackagePath>www\js\core\unittest\service\expenses.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.294</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\viewmodel\expenses.js">
-      <PackagePath>www\js\core\unittest\viewmodel\expenses.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.300</Modified>
+      <Modified>2014-05-05T22:12:29.132</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\viewModels\expense.js">
       <PackagePath>www\js\core\viewModels\expense.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.303</Modified>
+      <Modified>2014-05-05T22:12:29.137</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\viewModels\expenses.js">
       <PackagePath>www\js\core\viewModels\expenses.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.304</Modified>
+      <Modified>2014-05-05T22:12:29.139</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\viewModels\newExpense.js">
       <PackagePath>www\js\core\viewModels\newExpense.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.306</Modified>
+      <Modified>2014-05-05T22:12:29.142</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\viewModels\settings.js">
       <PackagePath>www\js\core\viewModels\settings.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.308</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\app\app.js">
-      <PackagePath>www\js\core\views\app\app.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.317</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\app\navigator.js">
-      <PackagePath>www\js\core\views\app\navigator.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.319</Modified>
+      <Modified>2014-05-05T22:12:29.144</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\expense\expense.js">
       <PackagePath>www\js\core\views\expense\expense.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.325</Modified>
+      <Modified>2014-05-05T22:12:29.157</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\expenses\expenses.js">
       <PackagePath>www\js\core\views\expenses\expenses.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.331</Modified>
+      <Modified>2014-05-05T22:12:29.165</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\newexpense\newexpense.js">
       <PackagePath>www\js\core\views\newexpense\newexpense.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.340</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\settings\settings.js">
-      <PackagePath>www\js\core\views\settings\settings.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.350</Modified>
+      <Modified>2014-05-05T22:12:29.171</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\viewsUtil.js">
       <PackagePath>www\js\core\views\viewsUtil.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.352</Modified>
+      <Modified>2014-05-05T22:12:29.173</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\index.js">
       <PackagePath>www\js\index.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.355</Modified>
+      <Modified>2014-05-05T22:12:29.174</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.camera\src\windows8\CameraProxy.js">
       <PackagePath>www\plugins\org.apache.cordova.camera\src\windows8\CameraProxy.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.544</Modified>
+      <Modified>2014-05-05T22:12:29.349</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.camera\www\Camera.js">
       <PackagePath>www\plugins\org.apache.cordova.camera\www\Camera.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.533</Modified>
+      <Modified>2014-05-05T22:12:29.337</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.camera\www\CameraConstants.js">
       <PackagePath>www\plugins\org.apache.cordova.camera\www\CameraConstants.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.528</Modified>
+      <Modified>2014-05-05T22:12:29.332</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js">
       <PackagePath>www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.537</Modified>
+      <Modified>2014-05-05T22:12:29.340</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js">
       <PackagePath>www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.531</Modified>
+      <Modified>2014-05-05T22:12:29.335</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\src\windows8\FileProxy.js">
       <PackagePath>www\plugins\org.apache.cordova.file\src\windows8\FileProxy.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.628</Modified>
+      <Modified>2014-05-05T22:12:29.481</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\DirectoryEntry.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\DirectoryEntry.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.567</Modified>
+      <Modified>2014-05-05T22:12:29.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\DirectoryReader.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\DirectoryReader.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.569</Modified>
+      <Modified>2014-05-05T22:12:29.391</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\Entry.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\Entry.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.575</Modified>
+      <Modified>2014-05-05T22:12:29.409</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\File.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\File.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.577</Modified>
+      <Modified>2014-05-05T22:12:29.412</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\FileEntry.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\FileEntry.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.579</Modified>
+      <Modified>2014-05-05T22:12:29.416</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\FileError.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\FileError.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.583</Modified>
+      <Modified>2014-05-05T22:12:29.421</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\FileReader.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\FileReader.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.589</Modified>
+      <Modified>2014-05-05T22:12:29.429</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\FileSystem.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\FileSystem.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.591</Modified>
+      <Modified>2014-05-05T22:12:29.432</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\FileUploadOptions.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\FileUploadOptions.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.593</Modified>
+      <Modified>2014-05-05T22:12:29.435</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\FileUploadResult.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\FileUploadResult.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.597</Modified>
+      <Modified>2014-05-05T22:12:29.438</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\FileWriter.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\FileWriter.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.602</Modified>
+      <Modified>2014-05-05T22:12:29.445</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\Flags.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\Flags.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.604</Modified>
+      <Modified>2014-05-05T22:12:29.448</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\LocalFileSystem.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\LocalFileSystem.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.606</Modified>
+      <Modified>2014-05-05T22:12:29.454</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\Metadata.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\Metadata.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.608</Modified>
+      <Modified>2014-05-05T22:12:29.457</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\ProgressEvent.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\ProgressEvent.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.610</Modified>
+      <Modified>2014-05-05T22:12:29.459</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\requestFileSystem.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\requestFileSystem.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.612</Modified>
+      <Modified>2014-05-05T22:12:29.461</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.file\www\resolveLocalFileSystemURI.js">
       <PackagePath>www\plugins\org.apache.cordova.file\www\resolveLocalFileSystemURI.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.616</Modified>
+      <Modified>2014-05-05T22:12:29.464</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.geolocation\src\windows8\GeolocationProxy.js">
       <PackagePath>www\plugins\org.apache.cordova.geolocation\src\windows8\GeolocationProxy.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.557</Modified>
+      <Modified>2014-05-05T22:12:29.372</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\plugins\org.apache.cordova.geolocation\www\PositionError.js">
       <PackagePath>www\plugins\org.apache.cordova.geolocation\www\PositionError.js</PackagePath>
-      <Modified>2014-05-05T22:00:02.553</Modified>
+      <Modified>2014-05-05T22:12:29.367</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\css\cordova.css">
       <PackagePath>www\css\cordova.css</PackagePath>
-      <Modified>2014-05-05T22:00:01.532</Modified>
+      <Modified>2014-05-05T22:12:28.244</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\css\index.css">
       <PackagePath>www\css\index.css</PackagePath>
-      <Modified>2014-05-05T22:00:01.534</Modified>
+      <Modified>2014-05-05T22:12:28.250</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\css\bootstrap-theme-nav.css">
       <PackagePath>www\js\core\lib\bootstrap_nav\css\bootstrap-theme-nav.css</PackagePath>
-      <Modified>2014-05-05T22:00:01.573</Modified>
+      <Modified>2014-05-05T22:12:28.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\css\bootstrap-theme.css">
       <PackagePath>www\js\core\lib\bootstrap_nav\css\bootstrap-theme.css</PackagePath>
-      <Modified>2014-05-05T22:00:01.577</Modified>
+      <Modified>2014-05-05T22:12:28.291</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\css\bootstrap-theme.min.css">
       <PackagePath>www\js\core\lib\bootstrap_nav\css\bootstrap-theme.min.css</PackagePath>
-      <Modified>2014-05-05T22:00:01.581</Modified>
+      <Modified>2014-05-05T22:12:28.295</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\css\bootstrap.css">
       <PackagePath>www\js\core\lib\bootstrap_nav\css\bootstrap.css</PackagePath>
-      <Modified>2014-05-05T22:00:01.585</Modified>
+      <Modified>2014-05-05T22:12:28.299</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\css\bootstrap.min.css">
       <PackagePath>www\js\core\lib\bootstrap_nav\css\bootstrap.min.css</PackagePath>
-      <Modified>2014-05-05T22:00:01.589</Modified>
+      <Modified>2014-05-05T22:12:28.303</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\winjs\css\ui-dark.css">
       <PackagePath>www\js\core\lib\winjs\css\ui-dark.css</PackagePath>
-      <Modified>2014-05-05T22:00:01.818</Modified>
+      <Modified>2014-05-05T22:12:28.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\winjs\css\ui-light.css">
       <PackagePath>www\js\core\lib\winjs\css\ui-light.css</PackagePath>
-      <Modified>2014-05-05T22:00:01.824</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\service\expenses.css">
-      <PackagePath>www\js\core\unittest\service\expenses.css</PackagePath>
-      <Modified>2014-05-05T22:00:02.290</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\viewmodel\expenses.css">
-      <PackagePath>www\js\core\unittest\viewmodel\expenses.css</PackagePath>
-      <Modified>2014-05-05T22:00:02.297</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\app\app.css">
-      <PackagePath>www\js\core\views\app\app.css</PackagePath>
-      <Modified>2014-05-05T22:00:02.311</Modified>
+      <Modified>2014-05-05T22:12:28.613</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\expense\expense.css">
       <PackagePath>www\js\core\views\expense\expense.css</PackagePath>
-      <Modified>2014-05-05T22:00:02.322</Modified>
+      <Modified>2014-05-05T22:12:29.152</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\expenses\expenses.css">
       <PackagePath>www\js\core\views\expenses\expenses.css</PackagePath>
-      <Modified>2014-05-05T22:00:02.328</Modified>
+      <Modified>2014-05-05T22:12:29.160</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\newexpense\newexpense.css">
       <PackagePath>www\js\core\views\newexpense\newexpense.css</PackagePath>
-      <Modified>2014-05-05T22:00:02.336</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\settings\settings.css">
-      <PackagePath>www\js\core\views\settings\settings.css</PackagePath>
-      <Modified>2014-05-05T22:00:02.343</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\index.bu.html">
-      <PackagePath>www\index.bu.html</PackagePath>
-      <Modified>2014-05-05T22:00:01.550</Modified>
+      <Modified>2014-05-05T22:12:29.167</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\index.html">
       <PackagePath>www\index.html</PackagePath>
-      <Modified>2014-05-05T22:00:01.553</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\index.web.html">
-      <PackagePath>www\index.web.html</PackagePath>
-      <Modified>2014-05-05T22:00:01.556</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\service\expenses.html">
-      <PackagePath>www\js\core\unittest\service\expenses.html</PackagePath>
-      <Modified>2014-05-05T22:00:02.291</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\viewmodel\expenses.html">
-      <PackagePath>www\js\core\unittest\viewmodel\expenses.html</PackagePath>
-      <Modified>2014-05-05T22:00:02.299</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\app\app.html">
-      <PackagePath>www\js\core\views\app\app.html</PackagePath>
-      <Modified>2014-05-05T22:00:02.313</Modified>
+      <Modified>2014-05-05T22:12:28.269</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\expense\expense.html">
       <PackagePath>www\js\core\views\expense\expense.html</PackagePath>
-      <Modified>2014-05-05T22:00:02.323</Modified>
+      <Modified>2014-05-05T22:12:29.154</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\expenses\expenses.html">
       <PackagePath>www\js\core\views\expenses\expenses.html</PackagePath>
-      <Modified>2014-05-05T22:00:02.329</Modified>
+      <Modified>2014-05-05T22:12:29.163</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\newexpense\newexpense.html">
       <PackagePath>www\js\core\views\newexpense\newexpense.html</PackagePath>
-      <Modified>2014-05-05T22:00:02.338</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\settings\settings.html">
-      <PackagePath>www\js\core\views\settings\settings.html</PackagePath>
-      <Modified>2014-05-05T22:00:02.345</Modified>
+      <Modified>2014-05-05T22:12:29.169</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\config.json">
       <PackagePath>www\js\core\lib\bootstrap_nav\config.json</PackagePath>
-      <Modified>2014-05-05T22:00:01.567</Modified>
+      <Modified>2014-05-05T22:12:28.282</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\fonts\glyphicons-halflings-regular.eot">
       <PackagePath>www\js\core\lib\bootstrap_nav\fonts\glyphicons-halflings-regular.eot</PackagePath>
-      <Modified>2014-05-05T22:00:01.601</Modified>
+      <Modified>2014-05-05T22:12:28.318</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\fonts\glyphicons-halflings-regular.svg">
       <PackagePath>www\js\core\lib\bootstrap_nav\fonts\glyphicons-halflings-regular.svg</PackagePath>
-      <Modified>2014-05-05T22:00:01.606</Modified>
+      <Modified>2014-05-05T22:12:28.325</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\fonts\glyphicons-halflings-regular.ttf">
       <PackagePath>www\js\core\lib\bootstrap_nav\fonts\glyphicons-halflings-regular.ttf</PackagePath>
-      <Modified>2014-05-05T22:00:01.611</Modified>
+      <Modified>2014-05-05T22:12:28.330</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\winjs\fonts\Symbols.ttf">
       <PackagePath>www\js\core\lib\winjs\fonts\Symbols.ttf</PackagePath>
-      <Modified>2014-05-05T22:00:01.828</Modified>
+      <Modified>2014-05-05T22:12:28.618</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\fonts\glyphicons-halflings-regular.woff">
       <PackagePath>www\js\core\lib\bootstrap_nav\fonts\glyphicons-halflings-regular.woff</PackagePath>
-      <Modified>2014-05-05T22:00:01.616</Modified>
+      <Modified>2014-05-05T22:12:28.335</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\jquery\jquery-2.1.0.min.map">
       <PackagePath>www\js\core\lib\jquery\jquery-2.1.0.min.map</PackagePath>
-      <Modified>2014-05-05T22:00:01.766</Modified>
+      <Modified>2014-05-05T22:12:28.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-05-05T22:00:04.057</Modified>
+      <Modified>2014-05-05T22:12:31.146</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

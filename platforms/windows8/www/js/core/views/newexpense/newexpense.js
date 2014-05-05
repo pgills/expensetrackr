@@ -14,7 +14,6 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-            // TODO: Initialize the page here.
             this.mapContainer.winControl.addEventListener("invoked", this.getLocation);
             this.pictureContainer.winControl.addEventListener("invoked", this.getPicture);
         },
@@ -25,13 +24,10 @@
         },
 
         unload: function () {
-            // TODO: Respond to navigations away from this page.
         },
 
         updateLayout: function (element) {
             /// <param name="element" domElement="true" />
-
-            // TODO: Respond to changes in layout.
         },
 
         _changeProgress: function (ev) {

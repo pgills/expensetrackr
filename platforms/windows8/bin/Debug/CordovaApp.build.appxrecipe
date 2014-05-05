@@ -125,12 +125,6 @@
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\services\mapsService.js">
       <PackagePath>www\js\core\services\mapsService.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\service\expenses.js">
-      <PackagePath>www\js\core\unittest\service\expenses.js</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\viewmodel\expenses.js">
-      <PackagePath>www\js\core\unittest\viewmodel\expenses.js</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\viewModels\expense.js">
       <PackagePath>www\js\core\viewModels\expense.js</PackagePath>
     </AppxPackagedFile>
@@ -143,12 +137,6 @@
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\viewModels\settings.js">
       <PackagePath>www\js\core\viewModels\settings.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\app\app.js">
-      <PackagePath>www\js\core\views\app\app.js</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\app\navigator.js">
-      <PackagePath>www\js\core\views\app\navigator.js</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\expense\expense.js">
       <PackagePath>www\js\core\views\expense\expense.js</PackagePath>
     </AppxPackagedFile>
@@ -157,9 +145,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\newexpense\newexpense.js">
       <PackagePath>www\js\core\views\newexpense\newexpense.js</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\settings\settings.js">
-      <PackagePath>www\js\core\views\settings\settings.js</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\viewsUtil.js">
       <PackagePath>www\js\core\views\viewsUtil.js</PackagePath>
@@ -269,15 +254,6 @@
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\winjs\css\ui-light.css">
       <PackagePath>www\js\core\lib\winjs\css\ui-light.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\service\expenses.css">
-      <PackagePath>www\js\core\unittest\service\expenses.css</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\viewmodel\expenses.css">
-      <PackagePath>www\js\core\unittest\viewmodel\expenses.css</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\app\app.css">
-      <PackagePath>www\js\core\views\app\app.css</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\expense\expense.css">
       <PackagePath>www\js\core\views\expense\expense.css</PackagePath>
     </AppxPackagedFile>
@@ -287,26 +263,8 @@
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\newexpense\newexpense.css">
       <PackagePath>www\js\core\views\newexpense\newexpense.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\settings\settings.css">
-      <PackagePath>www\js\core\views\settings\settings.css</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\index.bu.html">
-      <PackagePath>www\index.bu.html</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\index.html">
       <PackagePath>www\index.html</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\index.web.html">
-      <PackagePath>www\index.web.html</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\service\expenses.html">
-      <PackagePath>www\js\core\unittest\service\expenses.html</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\unittest\viewmodel\expenses.html">
-      <PackagePath>www\js\core\unittest\viewmodel\expenses.html</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\app\app.html">
-      <PackagePath>www\js\core\views\app\app.html</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\expense\expense.html">
       <PackagePath>www\js\core\views\expense\expense.html</PackagePath>
@@ -316,9 +274,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\newexpense\newexpense.html">
       <PackagePath>www\js\core\views\newexpense\newexpense.html</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\views\settings\settings.html">
-      <PackagePath>www\js\core\views\settings\settings.html</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\pagildea\dev\cordova\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\config.json">
       <PackagePath>www\js\core\lib\bootstrap_nav\config.json</PackagePath>

@@ -97,13 +97,7 @@
         <Content Include="www\img\map6.png" />
     </ItemGroup>
     <ItemGroup>
-        <Content Include="www\index.bu.html" />
-    </ItemGroup>
-    <ItemGroup>
         <Content Include="www\index.html" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\index.web.html" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="www\js\app.js" />
@@ -217,24 +211,6 @@
         <Content Include="www\js\core\services\mapsService.js" />
     </ItemGroup>
     <ItemGroup>
-        <Content Include="www\js\core\unittest\service\expenses.css" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\unittest\service\expenses.html" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\unittest\service\expenses.js" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\unittest\viewmodel\expenses.css" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\unittest\viewmodel\expenses.html" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\unittest\viewmodel\expenses.js" />
-    </ItemGroup>
-    <ItemGroup>
         <Content Include="www\js\core\viewModels\expense.js" />
     </ItemGroup>
     <ItemGroup>
@@ -245,18 +221,6 @@
     </ItemGroup>
     <ItemGroup>
         <Content Include="www\js\core\viewModels\settings.js" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\views\app\app.css" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\views\app\app.html" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\views\app\app.js" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\views\app\navigator.js" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="www\js\core\views\expense\expense.css" />
@@ -284,15 +248,6 @@
     </ItemGroup>
     <ItemGroup>
         <Content Include="www\js\core\views\newexpense\newexpense.js" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\views\settings\settings.css" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\views\settings\settings.html" />
-    </ItemGroup>
-    <ItemGroup>
-        <Content Include="www\js\core\views\settings\settings.js" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="www\js\core\views\viewsUtil.js" />
