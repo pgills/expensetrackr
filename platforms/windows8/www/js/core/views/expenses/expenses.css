@@ -10,7 +10,7 @@
 
 
 #et .expenses .listView .win-container {
-    width: 100%;
+    width: calc(100% - 12px);
     height: 120px;
 }
 
@@ -47,53 +47,37 @@
     height: 100%;
 }
 
-@media screen and (max-width: 320px) {
-    #et .expenses .listView .win-container {
-        width: 100%;
-        height: 60px;
-    }
 
-    #et .expenses .listView .win-container {
-        width: 100%;
-        height: 60px;
-    }
-
-    #et .expenses .item {
-        width: 100%;
-        height: 60px;
-        overflow: hidden;
-    }
-
-    #et .expenses .item .thumb {
-        float: left;
-        width: 40px;
-        height: 40px;
-        background-color: #333;
-    }
-
-    #et .expenses .item .item-body {
-        float: left;
-        margin-left: 10px;
-        margin-right: 10px;
-        width: calc((100% - 125px));
-    }
-
-    #et .expenses .item .item-body .text {
-        display: none;
-    }
-
-    #et .expenses .item .item-date {
-        display: none;
-    }
-
-    #et .expenses .item .cost {
-        text-align: right;
-        float: left;
-        width: 85px;
-        height: 100%;
-    }
-
-    #et .expenses .item .cost .currency {
-       display: none;
-    }
+/* Template definition for mobile views */
+#et.mobile .expenses .listView .win-container {
+    width: calc(100% - 12px);
+    height: 60px;
 }
+
+#et.mobile .expenses .item {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+}
+
+#et.mobile .expenses .item .thumb {
+    float: left;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+}
+
+#et.mobile .expenses .item .item-body {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc((100% - 145px));
+}
+
+#et.mobile .expenses .item .cost {
+    text-align: right;
+    float: left;
+    width: 85px;
+    height: 100%;
+}
+

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,7 +10,7 @@
 <body>
     <div class="expenses">
         <progress class="win-progress spinner win" data-win-bind="style.display: this.viewModel.progress Binding.noneIfFalse"></progress>
-        <div class="template" data-win-control="WinJS.Binding.Template" style="display: none;">
+        <div data-win-name="defaultTemplate" data-win-control="WinJS.Binding.Template" style="display: none;">
             <div class="item">
                 <img class="thumb" data-win-bind="src: url" />
                 <div class="item-body">
@@ -24,7 +24,20 @@
                 <div class="cost win-type-x-large">
                     <span>$</span>
                     <span data-win-bind="textContent: cost">0</span>
-                    <div class="darker">USD</div>
+                    <div class="currency darker">USD</div>
+                </div>
+            </div>
+        </div>
+        <div data-win-name="mobileTemplate" data-win-control="WinJS.Binding.Template" style="display: none;">
+            <div class="item mobile">
+                <img class="thumb" data-win-bind="src: url" />
+                <div class="item-body">
+                    <div class="title win-type-medium win-type-ellipsis" data-win-bind="textContent: title"></div>
+                </div>
+                <div class="cost win-type-medium">
+                    <span>$</span>
+                    <span data-win-bind="textContent: cost">0</span>
+                    <span class="currency darker">USD</span>
                 </div>
             </div>
         </div>
@@ -32,7 +45,7 @@
             <h2 data-win-bind="textContent: text">Status</h2>
         </div>
         <div class="listView" data-win-name="listView" data-win-control="WinJS.UI.ListView"
-             data-win-options="{itemTemplate: select('.template'), groupTemplate: select('.group-template'), layout: {type: WinJS.UI.ListLayout}}"
+             data-win-options="{layout: {type: WinJS.UI.ListLayout}}"
              data-win-bind="winControl.itemDataSource: viewModel.list.dataSource;
                             winControl.oniteminvoked: this.itemInvoked;"></div>
     </div>
