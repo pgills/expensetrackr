@@ -162,8 +162,8 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "org.apache.cordova.camera": "0.2.9",
-    "org.apache.cordova.file": "1.1.0",
-    "org.apache.cordova.geolocation": "0.3.7"
+    "org.apache.cordova.geolocation": "0.3.7",
+    "org.apache.cordova.file": "1.1.0"
 }
 // BOTTOM OF METADATA
 });

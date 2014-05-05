@@ -43,10 +43,10 @@
         "org.apache.cordova.camera": {
             "PACKAGE_NAME": "com.expensetrackr"
         },
-        "org.apache.cordova.file": {
+        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "com.expensetrackr"
         },
-        "org.apache.cordova.geolocation": {
+        "org.apache.cordova.file": {
             "PACKAGE_NAME": "com.expensetrackr"
         }
     },

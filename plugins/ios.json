@@ -47,11 +47,11 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "xml": "<feature name=\"File\"><param name=\"ios-package\" value=\"CDVFile\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -61,13 +61,13 @@
     },
     "installed_plugins": {
         "org.apache.cordova.camera": {
-            "PACKAGE_NAME": "ExpenseTrackr"
-        },
-        "org.apache.cordova.file": {
-            "PACKAGE_NAME": "ExpenseTrackr"
+            "PACKAGE_NAME": "com.expensetrackr"
         },
         "org.apache.cordova.geolocation": {
-            "PACKAGE_NAME": "ExpenseTrackr"
+            "PACKAGE_NAME": "com.expensetrackr"
+        },
+        "org.apache.cordova.file": {
+            "PACKAGE_NAME": "com.expensetrackr"
         }
     },
     "dependent_plugins": {}
