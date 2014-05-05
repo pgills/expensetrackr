@@ -20,7 +20,7 @@
     <AppXManifest Include="E:\cordova-samples\ExpenseTrackr\platforms\windows8\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-05-03T16:06:53.704</Modified>
+      <Modified>2014-05-05T15:55:16.021</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -82,7 +82,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\cordova-samples\ExpenseTrackr\platforms\windows8\www\js\app.js">
       <PackagePath>www\js\app.js</PackagePath>
-      <Modified>2014-05-05T02:47:59.594</Modified>
+      <Modified>2014-05-05T15:50:50.348</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\cordova-samples\ExpenseTrackr\platforms\windows8\www\js\core\lib\bootstrap_nav\js\bootstrap.js">
       <PackagePath>www\js\core\lib\bootstrap_nav\js\bootstrap.js</PackagePath>
@@ -214,7 +214,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\cordova-samples\ExpenseTrackr\platforms\windows8\www\js\core\views\newexpense\newexpense.js">
       <PackagePath>www\js\core\views\newexpense\newexpense.js</PackagePath>
-      <Modified>2014-05-03T16:05:12.093</Modified>
+      <Modified>2014-05-05T15:55:12.477</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\cordova-samples\ExpenseTrackr\platforms\windows8\www\js\core\views\settings\settings.js">
       <PackagePath>www\js\core\views\settings\settings.js</PackagePath>
@@ -458,7 +458,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\cordova-samples\ExpenseTrackr\platforms\windows8\bin\Debug\ReverseMap\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-05-03T16:06:52.988</Modified>
+      <Modified>2014-05-05T15:55:14.500</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
