@@ -10,7 +10,7 @@
 
 
 #et .expenses .listView .win-container {
-    width: calc(100% - 12px);
+    width: calc(100% - 22px);
     height: 120px;
 }
 

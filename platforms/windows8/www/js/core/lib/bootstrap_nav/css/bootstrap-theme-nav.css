@@ -400,3 +400,7 @@
     color: #fff;
     background-color: transparent;
 }
+
+.navbar-default .navbar-toggle .icon-bar {
+   background-color: rgb(255, 255, 255);
+}

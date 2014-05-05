@@ -211,6 +211,9 @@
         <Content Include="www\js\core\services\mapsService.js" />
     </ItemGroup>
     <ItemGroup>
+        <Content Include="www\js\core\services\servicesInfo.js" />
+    </ItemGroup>
+    <ItemGroup>
         <Content Include="www\js\core\viewModels\expense.js" />
     </ItemGroup>
     <ItemGroup>
