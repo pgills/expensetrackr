@@ -23,6 +23,7 @@ This project relies on having obtained API keys and urls for the following servi
 Please add the respective API keys and urls to the following file before you run the application:
 * [servicesInfo.js](https://github.com/pgills/expensetrackr/blob/master/www/js/core/services/servicesInfo.js)
 
+After you create your Azure Mobile Service, create a new table called "expenses" through the Data Tab -> Create button.  
 #Tested Environments
 The following section outlines the current set of tested platforms configurations for this application example.
 
