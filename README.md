@@ -42,7 +42,7 @@ Nexus 10 with Android 4.4 running Cordova Application
 ###Expense Page
 ![Nexus 10 - Expenses](https://github.com/pgills/expensetrackr/wiki/screenshots/Nexus10Expenses.png)
 
-###New Expesnse Page
+###New Expense Page
 ![Nexus 10 - New Expense](https://github.com/pgills/expensetrackr/wiki/screenshots/Nexus10NewExpense.png)
 
 ##iOS
