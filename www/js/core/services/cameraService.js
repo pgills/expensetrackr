@@ -20,7 +20,9 @@
                             sourceType : Camera.PictureSourceType.CAMERA,
                             encodingType: Camera.EncodingType.PNG,
                             allowEdit: true,
-                            saveToPhotoAlbum: false 
+                            saveToPhotoAlbum: false,
+                            targetWidth: 100,
+                            targetHeight: 100
                         });
                     });
 

@@ -1,10 +1,10 @@
 ﻿/*!
   Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-  Build: 2.0.1.WinJS.2014.7.24
+  Build: 2.0.1.WinJS.2014.4.28
   Version: WinJS.2.1
 */
 
-// Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+﻿// Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 (function (global) {
     global.strings = global.strings || {};
@@ -21,11 +21,11 @@
         });
     }
     
-addStrings(
-// Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+﻿addStrings(
+﻿// Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 "ms-resource://"+appxVersion+"/base/",
 
-{
+﻿{
     "attributeBindingSingleProperty": "Attribute binding requires a single destination attribute name, often in the form \"this['aria-label']\" or \"width\".",
     "bindingInitializerNotFound": "Initializer not found:'{0}'",
     "cannotBindToThis": "Can't bind to 'this'.",
@@ -56,6 +56,6 @@ addStrings(
     "unsupportedDataTypeForBinding": "Unsupported data type"
 }
 
-);
-
+﻿);
+﻿
 }(this));

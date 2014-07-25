@@ -19,7 +19,8 @@
         getMap: function (long, lat) {
             var url = _imageUrl + lat + "," + long + _imageUrlParams + _format + _urlKey;
             return WinJS.xhr({
-                url: url
+                url: url,
+                responseType: "json"
             }).then(function (response) {
                 var data = JSON.parse(response.responseText);
                 var rs = data.resourceSets[0];
@@ -40,7 +41,8 @@
         getAddress: function (long, lat) {
             var url = _locationUrl + lat + "," + long + _locationUrlParams + _format + _urlKey;
             return WinJS.xhr({
-                url: url
+                url: url,
+                responseType: "json"
             }).then(function (response) {
                 var data = JSON.parse(response.responseText);
                 var rs = data.resourceSets[0];
