@@ -1,10 +1,10 @@
 ﻿/*!
   Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-  Build: 2.0.1.WinJS.2014.4.28
+  Build: 2.0.1.WinJS.2014.7.25
   Version: WinJS.2.1
 */
 
-﻿// Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+// Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 (function (global) {
     global.strings = global.strings || {};
@@ -21,11 +21,11 @@
         });
     }
     
-﻿addStrings(
-﻿// Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+addStrings(
+// Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 "ms-resource://"+appxVersion+"/ui/",
 
-﻿{
+{
     "appBarAriaLabel": "App Bar",
     "appBarCommandAriaLabel": "App Bar Item",
     "asynchronousRender" : "Top level items must render synchronously",
@@ -66,7 +66,6 @@
     "invalidCountReturned": "Error: data adapter should return undefined, null, CountResult.unknown, or a non-negative integer for the count.",
     "invalidIndexReturned": "Error: data adapter should return undefined, null or a non-negative integer for the index.",
     "invalidItemReturned": "Error: data adapter returned item that is not an object.",
-    "invalidItemsManagerCallback": "Invalid argument: {0} must be a function.",
     "invalidKeyReturned": "Error: data adapter returned item with undefined or null key.",
     "invalidPivotContent": "Invalid content: Pivot content must be made up of PivotItems.",
     "invalidSearchBoxSuggestionKind": "Error: Invalid search suggestion kind.",
@@ -526,6 +525,6 @@
     "_appBarIcons\\preview.comment":                   	"{Locked:qps-ploc,qps-plocm}"
 }
 
-﻿);
-﻿
+);
+
 }(this));

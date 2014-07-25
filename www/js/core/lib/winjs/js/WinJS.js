@@ -7,7 +7,7 @@
         global.msWriteProfilerMark && msWriteProfilerMark(text);
     };
 })(this);
-WinJS.Utilities._writeProfilerMark("WinJS.2.1 2.0.1.WinJS.2014.7.24 WinJS.js,StartTM");
+WinJS.Utilities._writeProfilerMark("WinJS.2.1 2.0.1.WinJS.2014.7.25 WinJS.js,StartTM");
 (function (global, factory) {
     if (typeof define === 'function' && define.amd) {
         define([], factory);
@@ -5242,6 +5242,10 @@ define('WinJS/Utilities/_ElementUtilities',[
         var changedTouches = eventObject.changedTouches,
             retVal = null;
         
+        if(!changedTouches) {
+            return retVal;
+        }
+        
         for (var i = 0, len = changedTouches.length; i < len; i++) {
             var touchObject = changedTouches[i];
             var pointerEventObject = new PointerEventProxy(eventObject, {
@@ -5289,7 +5293,7 @@ define('WinJS/Utilities/_ElementUtilities',[
             mouse: "mousemove"
         },
         pointerenter: {
-            touch: null,
+            touch: "touchenter",
             mspointer: "MSPointerEnter",
             mouse: "mouseenter"
         },
@@ -5299,7 +5303,7 @@ define('WinJS/Utilities/_ElementUtilities',[
             mouse: "mouseover"
         },
         pointerout: {
-            touch: null,
+            touch: "touchleave",
             mspointer: "MSPointerOut",
             mouse: "mouseout"
         },
@@ -5957,14 +5961,17 @@ define('WinJS/Utilities/_ElementUtilities',[
             var styleObject = element.style;
             if (typeof flexParams.grow !== "undefined") {
                 styleObject.msFlexPositive = flexParams.grow;
+                styleObject.webkitFlexGrow = flexParams.grow;
                 styleObject.flexGrow = flexParams.grow;
             }
             if (typeof flexParams.shrink !== "undefined") {
                 styleObject.msFlexNegative = flexParams.shrink;
+                styleObject.webkitFlexShrink = flexParams.shrink;
                 styleObject.flexShrink = flexParams.shrink;
             }
             if (typeof flexParams.basis !== "undefined") {
                 styleObject.msFlexPreferredSize = flexParams.basis;
+                styleObject.webkitFlexBasis = flexParams.basis;
                 styleObject.flexBasis = flexParams.basis;
             }
         },
@@ -41959,11 +41966,13 @@ define('WinJS/Controls/ListView/_VirtualizeContentsView',[
                         index = this._listView._groups.index(item);
                         type = _UI.ObjectType.groupHeader;
                         _ElementUtilities._setAttribute(item, "role", this._listView._headerRole);
+                        _ElementUtilities._setAttribute(item, "tabindex", this._listView._tabIndex);
                     } else {
                         index = this.items.index(item);
                         _ElementUtilities._setAttribute(item, "aria-setsize", count);
                         _ElementUtilities._setAttribute(item, "aria-posinset", index + 1);
                         _ElementUtilities._setAttribute(item, "role", this._listView._itemRole);
+                        _ElementUtilities._setAttribute(item, "tabindex", this._listView._tabIndex);
                     }
 
                     if (type === _UI.ObjectType.groupHeader) {
@@ -61707,7 +61716,7 @@ define('WinJS/Controls/Flyout/_Overlay',[
     '../../Utilities/_Control',
     '../../Utilities/_ElementUtilities',
     '../AppBar/_Constants'
-    ], function overlayInit(exports, _Global, _WinRT, _Base, _BaseUtils, _ErrorFromName, _Events, _Resources, _WriteProfilerMark, Animations, ControlProcessor, Promise, Scheduler, _Control, _ElementUtilities, _Constants) {
+], function overlayInit(exports, _Global, _WinRT, _Base, _BaseUtils, _ErrorFromName, _Events, _Resources, _WriteProfilerMark, Animations, ControlProcessor, Promise, Scheduler, _Control, _ElementUtilities, _Constants) {
     "use strict";
 
     _Base.Namespace._moduleDefine(exports, "WinJS.UI", {
@@ -63079,11 +63088,21 @@ define('WinJS/Controls/Flyout/_Overlay',[
                     _Overlay._hideAllBars(AppBars, keyboardInvoked);
                 },
 
-                // Show or hide all bars
-                _hideAllBars: function _hideAllBars(bars, keyboardInvoked) {
+                // Show/Hide all bars
+                _hideAllBars: function _Overlay_hideAllBars(bars, keyboardInvoked) {
                     var allBarsAnimationPromises = bars.map(function (bar) {
                         bar._keyboardInvoked = keyboardInvoked;
                         bar.hide();
+                        return bar._animationPromise;
+                    });
+                    return Promise.join(allBarsAnimationPromises);
+                },
+
+                _showAllBars: function _Overlay_showAllBars(bars, keyboardInvoked) {
+                    var allBarsAnimationPromises = bars.map(function (bar) {
+                        bar._keyboardInvoked = keyboardInvoked;
+                        bar._doNotFocus = false;
+                        bar._show();
                         return bar._animationPromise;
                     });
                     return Promise.join(allBarsAnimationPromises);
@@ -63135,102 +63154,102 @@ define('WinJS/Controls/Flyout/_Overlay',[
                     return null;
                 },
 
-                // Global keyboard hiding offset
-                _keyboardInfo: {
-                    // Determine if the keyboard is visible or not.
-                    get _visible() {
+            // Global keyboard hiding offset
+            _keyboardInfo: {
+                // Determine if the keyboard is visible or not.
+                get _visible() {
+                    try {
+                        return (
+                            _WinRT.Windows.UI.ViewManagement.InputPane &&
+                            _WinRT.Windows.UI.ViewManagement.InputPane.getForCurrentView().occludedRect.height > 0
+                        );
+                    } catch (e) {
+                        return false;
+                    }
+                },
+
+                // See if we have to reserve extra space for the IHM
+                get _extraOccluded() {
+                    var occluded;
+                    if (_WinRT.Windows.UI.ViewManagement.InputPane) {
                         try {
-                            return (
-                                _WinRT.Windows.UI.ViewManagement.InputPane &&
-                                _WinRT.Windows.UI.ViewManagement.InputPane.getForCurrentView().occludedRect.height > 0
-                            );
+                            occluded = _WinRT.Windows.UI.ViewManagement.InputPane.getForCurrentView().occludedRect.height;
                         } catch (e) {
-                            return false;
                         }
-                    },
+                    }
 
-                    // See if we have to reserve extra space for the IHM
-                    get _extraOccluded() {
-                        var occluded;
-                        if (_WinRT.Windows.UI.ViewManagement.InputPane) {
-                            try {
-                                occluded = _WinRT.Windows.UI.ViewManagement.InputPane.getForCurrentView().occludedRect.height;
-                            } catch (e) {
-                            }
-                        }
+                    // Nothing occluded if not visible.
+                    if (occluded && !_Overlay._keyboardInfo._isResized) {
+                        // View hasn't been resized, need to return occluded height.
+                        return occluded;
+                    }
 
-                        // Nothing occluded if not visible.
-                        if (occluded && !_Overlay._keyboardInfo._isResized) {
-                            // View hasn't been resized, need to return occluded height.
-                            return occluded;
-                        }
+                    // View already has space for keyboard or there's no keyboard
+                    return 0;
+                },
 
-                        // View already has space for keyboard or there's no keyboard
-                        return 0;
-                    },
+                // See if the view has been resized to fit a keyboard
+                get _isResized() {
+                    // Compare ratios.  Very different includes IHM space.
+                    var heightRatio = _Global.document.documentElement.clientHeight / _Global.innerHeight,
+                        widthRatio = _Global.document.documentElement.clientWidth / _Global.innerWidth;
 
-                    // See if the view has been resized to fit a keyboard
-                    get _isResized() {
-                        // Compare ratios.  Very different includes IHM space.
-                        var heightRatio = _Global.document.documentElement.clientHeight / _Global.innerHeight,
-                            widthRatio = _Global.document.documentElement.clientWidth / _Global.innerWidth;
+                    // If they're nearly identical, then the view hasn't been resized for the IHM
+                    // Only check one bound because we know the IHM will make it shorter, not skinnier.
+                    return (widthRatio / heightRatio < 0.99);
+                },
 
-                        // If they're nearly identical, then the view hasn't been resized for the IHM
-                        // Only check one bound because we know the IHM will make it shorter, not skinnier.
-                        return (widthRatio / heightRatio < 0.99);
-                    },
+                // Get the top of our visible area in terms of its absolute distance from the top of document.documentElement. 
+                // Normalizes any offsets which have have occured between the visual viewport and the layout viewport due to resizing the viewport to fit the IHM and/or optical zoom.
+                get _visibleDocTop() {
+                    return _Global.pageYOffset - _Global.document.documentElement.scrollTop;
+                },
 
-                    // Get the top of our visible area in terms of its absolute distance from the top of document.documentElement. 
-                    // Normalizes any offsets which have have occured between the visual viewport and the layout viewport due to resizing the viewport to fit the IHM and/or optical zoom.
-                    get _visibleDocTop() {
-                        return _Global.pageYOffset - _Global.document.documentElement.scrollTop;
-                    },
+                // Get the bottom of our visible area.
+                get _visibleDocBottom() {
+                    return _Overlay._keyboardInfo._visibleDocTop + _Overlay._keyboardInfo._visibleDocHeight;
+                },
 
-                    // Get the bottom of our visible area.
-                    get _visibleDocBottom() {
-                        return _Overlay._keyboardInfo._visibleDocTop + _Overlay._keyboardInfo._visibleDocHeight;
-                    },
+                // Get the height of the visible document, e.g. the height of the visual viewport minus any IHM occlusion.
+                get _visibleDocHeight() {
+                    return _Overlay._keyboardInfo._visualViewportHeight - _Overlay._keyboardInfo._extraOccluded;
+                },
 
-                    // Get the height of the visible document, e.g. the height of the visual viewport minus any IHM occlusion.
-                    get _visibleDocHeight() {
-                        return _Overlay._keyboardInfo._visualViewportHeight - _Overlay._keyboardInfo._extraOccluded;
-                    },
+                // Get the visual viewport height. window.innerHeight doesn't return floating point values which are present with high DPI.
+                get _visualViewportHeight() {
+                    var boundingRect = _Overlay._keyboardInfo._visualViewportSpace;
+                    return boundingRect.bottom - boundingRect.top;
+                },
 
-                    // Get the visual viewport height. window.innerHeight doesn't return floating point values which are present with high DPI.
-                    get _visualViewportHeight() {
-                        var boundingRect = _Overlay._keyboardInfo._visualViewportSpace;
-                        return boundingRect.bottom - boundingRect.top;
-                    },
+                // Get the visual viewport width. window.innerHeight doesn't return floating point values which are present with high DPI.
+                get _visualViewportWidth() {
+                    var boundingRect = _Overlay._keyboardInfo._visualViewportSpace;
+                    return boundingRect.right - boundingRect.left;
+                },
 
-                    // Get the visual viewport width. window.innerHeight doesn't return floating point values which are present with high DPI.
-                    get _visualViewportWidth() {
-                        var boundingRect = _Overlay._keyboardInfo._visualViewportSpace;
-                        return boundingRect.right - boundingRect.left;
-                    },
+                get _visualViewportSpace() {
+                    var className = "win-visualviewport-space";
+                    var visualViewportSpace = _Global.document.body.querySelector("." + className);
+                    if (!visualViewportSpace) {
+                        visualViewportSpace = _Global.document.createElement("DIV");
+                        visualViewportSpace.className = className;
+                        _Global.document.body.appendChild(visualViewportSpace);
+                    }
 
-                    get _visualViewportSpace() {
-                        var className = "win-visualviewport-space";
-                        var visualViewportSpace = _Global.document.body.querySelector("." + className);
-                        if (!visualViewportSpace) {
-                            visualViewportSpace = _Global.document.createElement("DIV");
-                            visualViewportSpace.className = className;
-                            _Global.document.body.appendChild(visualViewportSpace);
-                        }
+                    return visualViewportSpace.getBoundingClientRect();
+                },
 
-                        return visualViewportSpace.getBoundingClientRect();
-                    },
+                // Get offset of visible window from bottom.
+                get _visibleDocBottomOffset() {
+                    // If the view resizes we can return 0 and rely on appbar's -ms-device-fixed css positioning. 
+                    return (_Overlay._keyboardInfo._isResized) ? 0 : _Overlay._keyboardInfo._extraOccluded;
+                },
 
-                    // Get offset of visible window from bottom.
-                    get _visibleDocBottomOffset() {
-                        // If the view resizes we can return 0 and rely on appbar's -ms-device-fixed css positioning. 
-                        return (_Overlay._keyboardInfo._isResized) ? 0 : _Overlay._keyboardInfo._extraOccluded;
-                    },
-
-                    // Get total length of the IHM showPanel animation
-                    get _animationShowLength() {
-                        if (_WinRT.Windows.UI.Core.AnimationMetrics) {
-                            var a = _WinRT.Windows.UI.Core.AnimationMetrics,
-                            animationDescription = new a.AnimationDescription(a.AnimationEffect.showPanel, a.AnimationEffectTarget.primary);
+                // Get total length of the IHM showPanel animation
+                get _animationShowLength() {
+                    if (_WinRT.Windows.UI.Core.AnimationMetrics) {
+                        var a = _WinRT.Windows.UI.Core.AnimationMetrics,
+                        animationDescription = new a.AnimationDescription(a.AnimationEffect.showPanel, a.AnimationEffectTarget.primary);
                         var animations = animationDescription.animations;
                         var max = 0;
                         for (var i = 0; i < animations.size; i++) {
@@ -63238,38 +63257,38 @@ define('WinJS/Controls/Flyout/_Overlay',[
                             max = Math.max(max, animation.delay + animation.duration);
                         }
                         return max;
-                        } else {
-                            return 0;
-                        }
+                    } else {
+                        return 0;
                     }
-                },
-
-                _ElementWithFocusPreviousToAppBar: null,
-
-                // for tests
-                _clickEatingAppBarClass: _Constants._clickEatingAppBarClass,
-                _clickEatingFlyoutClass: _Constants._clickEatingFlyoutClass,
-
-                // Padding for IHM timer to allow for first scroll event
-                _scrollTimeout: 150,
-
-                // Events
-                beforeShow: BEFORESHOW,
-                beforeHide: BEFOREHIDE,
-                afterShow: AFTERSHOW,
-                afterHide: AFTERHIDE,
-
-                commonstrings: {
-                    get cannotChangeCommandsWhenVisible() { return _Resources._getWinJSString("ui/cannotChangeCommandsWhenVisible").value; },
-                    get cannotChangeHiddenProperty() { return _Resources._getWinJSString("ui/cannotChangeHiddenProperty").value; }
                 }
-            });
+            },
 
-            _Base.Class.mix(_Overlay, _Control.DOMEventMixin);
+            _ElementWithFocusPreviousToAppBar: null,
 
-            return _Overlay;
-        })
-    });
+            // for tests
+            _clickEatingAppBarClass: _Constants._clickEatingAppBarClass,
+            _clickEatingFlyoutClass: _Constants._clickEatingFlyoutClass,
+
+            // Padding for IHM timer to allow for first scroll event
+            _scrollTimeout: 150,
+
+            // Events
+            beforeShow: BEFORESHOW,
+            beforeHide: BEFOREHIDE,
+            afterShow: AFTERSHOW,
+            afterHide: AFTERHIDE,
+
+            commonstrings: {
+                get cannotChangeCommandsWhenVisible() { return _Resources._getWinJSString("ui/cannotChangeCommandsWhenVisible").value; },
+                get cannotChangeHiddenProperty() { return _Resources._getWinJSString("ui/cannotChangeHiddenProperty").value; }
+            }
+        });
+
+    _Base.Class.mix(_Overlay, _Control.DOMEventMixin);
+
+    return _Overlay;
+})
+});
 
 });
 
@@ -65039,7 +65058,7 @@ define('WinJS/Controls/AppBar/_Layouts',[
     '../../Utilities/_ElementUtilities',
     './_Command',
     './_Constants'
-    ], function appBarLayoutsInit(exports, _Global, _Base, _ErrorFromName, _Resources, Scheduler, _Control, _Dispose, _ElementUtilities, _Command, _Constants) {
+], function appBarLayoutsInit(exports, _Global, _Base, _ErrorFromName, _Resources, Scheduler, _Control, _Dispose, _ElementUtilities, _Command, _Constants) {
     "use strict";
 
     // AppBar will use this when AppBar.layout property is set to "custom"
@@ -65176,7 +65195,7 @@ define('WinJS/Controls/AppBar/_Layouts',[
             var layoutType = _Constants.appBarLayoutCommands;
 
             var _AppBarCommandsLayout = _Base.Class.derive(exports._AppBarBaseLayout, function _AppBarCommandsLayout_ctor(appBarEl) {
-                exports._AppBarBaseLayout.call(this, appBarEl, {_className: layoutClassName, _type: layoutType});
+                exports._AppBarBaseLayout.call(this, appBarEl, { _className: layoutClassName, _type: layoutType });
                 this._commandLayoutsInit(appBarEl);
             }, {
                 _getWidthOfFullSizeCommands: function _AppBarCommandsLayout_getWidthOfFullSizeCommands(commands) {
@@ -65425,6 +65444,10 @@ define('WinJS/Controls/AppBar/_Layouts',[
                 }
             }
         },
+        disconnect: function _commandLayoutsMixin_disconnect() {
+            _ElementUtilities.removeClass(this.appBarEl, _Constants.reducedClass);
+            exports._AppBarBaseLayout.prototype.disconnect.call(this);
+        },
         _commandLayoutsInit: function _commandLayoutsMixin_commandLayoutsInit() {
             // Create layout infrastructure
             this._primaryCommands = _Global.document.createElement("DIV");
@@ -65604,7 +65627,7 @@ define('WinJS/Controls/AppBar',[
                 if (edgyHappening === "showing") {
                     _Overlay._Overlay._hideAllBars(bars, false);
                 } else if (edgyHappening === "hiding") {
-                    _showAllBars(bars, false);
+                    _Overlay._Overlay._showAllBars(bars, false);
                 }
                 edgyHappening = null;
             }
@@ -65652,27 +65675,17 @@ define('WinJS/Controls/AppBar',[
                 return AppBars;
             }
 
-            function _showAllBars(bars, keyboardInvoked) {
-                var len = bars.length;
-                var allBarsAnimationPromises = new Array(len);
-                for (var i = 0; i < len; i++) {
-                    bars[i]._keyboardInvoked = keyboardInvoked;
-                    bars[i]._doNotFocus = false;
-                    bars[i]._show();
-                    allBarsAnimationPromises[i] = bars[i]._animationPromise;
-                }
-                return Promise.join(allBarsAnimationPromises);
-            }
-
             // Sets focus to the last AppBar in the provided appBars array with given placement.
             // Returns true if focus was set.  False otherwise.
             function _setFocusToPreviousAppBarHelper(startIndex, appBarPlacement, appBars) {
+                var appBar;
                 for (var i = startIndex; i >= 0; i--) {
-                    if (appBars[i].winControl
-                     && appBars[i].winControl.placement === appBarPlacement
-                     && !appBars[i].winControl.hidden
-                     && appBars[i].winControl._focusOnLastFocusableElement
-                     && appBars[i].winControl._focusOnLastFocusableElement()) {
+                    appBar = appBars[i].winControl;
+                    if (appBar
+                     && appBar.placement === appBarPlacement
+                     && !appBar.hidden
+                     && appBar._focusOnLastFocusableElement
+                     && appBar._focusOnLastFocusableElement()) {
                         return true;
                     }
                 }
@@ -65721,7 +65734,7 @@ define('WinJS/Controls/AppBar',[
                     appBar = appBars[i].winControl;
                     if (appBar
                      && appBar.placement === appBarPlacement
-                     && appBar.hidden
+                     && !appBar.hidden
                      && appBar._focusOnFirstFocusableElement
                      && appBar._focusOnFirstFocusableElement()) {
                         return true;
@@ -65900,7 +65913,7 @@ define('WinJS/Controls/AppBar',[
 
                 // Need to set placement before closedDisplayMode, closedDisplayMode sets our starting position, which is dependant on placement.
                 this.placement = options.placement || _Constants.appBarPlacementBottom;
-                this.closedDisplayMode = options.closedDisplayMode || closedDisplayModes.none;
+                this.closedDisplayMode = options.closedDisplayMode || closedDisplayModes.minimal;
 
                 _Control.setOptions(this, options);
 
@@ -65939,10 +65952,10 @@ define('WinJS/Controls/AppBar',[
                 // Need to hide ourselves if we lose focus
                 _ElementUtilities._addEventListener(this._element, "focusout", function () { _Overlay._Overlay._hideIfAllAppBarsLostFocus(); }, false);
 
-                // Commands layout AppBar measures and caches its content synchronously in setOptions through the .commands property setter.
-                // Remove the commands layout AppBar from the layout tree at this point so we don't cause unnecessary layout costs whenever
-                // the window resizes or when CSS changes are applied to the commands layout AppBar's parent element.
-                if (this.layout === _Constants.appBarLayoutCommands) {
+
+                if (this.closedDisplayMode === closedDisplayModes.none && this.layout === _Constants.appBarLayoutCommands) {
+                    // Remove the commands layout AppBar from the layout tree at this point so we don't cause unnecessary layout costs whenever
+                    // the window resizes or when CSS changes are applied to the commands layout AppBar's parent element.
                     this._element.style.display = "none";
                 }
 
@@ -66545,6 +66558,9 @@ define('WinJS/Controls/AppBar',[
                         // also accounting for any viewport scrolling or soft keyboard positioning.                
                         this._ensurePosition();
 
+                        this._element.style.opacity = 1;
+                        this._element.style.visibility = "visible";
+
                         this._animationPromise = (performAnimation) ? this._animatePositionChange(fromPosition, toPosition) : Promise.wrap();
                         this._animationPromise.then(
                             function () { this._afterPositionChange(toPosition, newState); }.bind(this),
@@ -66575,7 +66591,8 @@ define('WinJS/Controls/AppBar',[
                         }
 
                         // Clean up animation transforms.
-                        this._element.style.transform = "none";
+                        var transformProperty = _BaseUtils._browserStyleEquivalents["transform"].scriptName;
+                        this._element.style[transformProperty] = "";
 
                         // Fire "after" event if we changed state.
                         if (newState === appbarShownState) {
@@ -66663,8 +66680,6 @@ define('WinJS/Controls/AppBar',[
                         offsetTop = (this._placement === _Constants.appBarPlacementTop) ? -distance : distance;
 
                     // Animate
-                    this._element.style.opacity = 1;
-                    this._element.style.visibility = "visible";
                     if (endingVisiblePixelHeight > beginningVisiblePixelHeight) {
                         var fromOffset = { top: offsetTop + "px", left: "0px" };
                         return Animations.showEdgeUI(this._element, fromOffset, { mechanism: "transition" });
@@ -67089,7 +67104,7 @@ define('WinJS/Controls/AppBar',[
                         return "hiding";
                     } else {
                         AppBar._appBarsSynchronizationPromise = AppBar._appBarsSynchronizationPromise.then(function () {
-                            return _showAllBars(bars, keyboardInvoked);
+                            return _Overlay._Overlay._showAllBars(bars, keyboardInvoked);
                         });
                         return "showing";
                     }
@@ -68364,6 +68379,8 @@ define('WinJS/Controls/SearchBox',[
                 this._requestingFocusOnKeyboardInputHandlerBind = this._requestingFocusOnKeyboardInputHandler.bind(this);
                 this._suggestionsRequestedHandlerBind = this._suggestionsRequestedHandler.bind(this);
                 this._suggestionsChangedHandlerBind = this._suggestionsChangedHandler.bind(this);
+                this._keydownCaptureHandlerBind = this._keydownCaptureHandler.bind(this);
+                this._frameLoadCaptureHandlerBind = this._frameLoadCaptureHandler.bind(this);
 
                 // Find out if we are in local compartment and if search APIs are available.
                 this._searchSuggestionManager = null;
@@ -68478,13 +68495,19 @@ define('WinJS/Controls/SearchBox',[
                     },
                     set: function (value) {
                         if (this._focusOnKeyboardInput && !value) {
-                            if (this._searchSuggestionManager) {
+                            if (!(this._searchSuggestionManager instanceof _SearchSuggestionManagerShim._SearchSuggestionManagerShim)) {
                                 this._searchSuggestionManager.removeEventListener("requestingfocusonkeyboardinput", this._requestingFocusOnKeyboardInputHandlerBind);
+                            } else {
+                                this._updateKeydownCaptureListeners(_Global.top, false /*add*/);
                             }
+
                         } else if (!this._focusOnKeyboardInput && !!value) {
-                            if (this._searchSuggestionManager) {
+                            if (!(this._searchSuggestionManager instanceof _SearchSuggestionManagerShim._SearchSuggestionManagerShim)) {
                                 this._searchSuggestionManager.addEventListener("requestingfocusonkeyboardinput", this._requestingFocusOnKeyboardInputHandlerBind);
+                            } else {
+                                this._updateKeydownCaptureListeners(_Global.top, true /*add*/);
                             }
+
                         }
                         this._focusOnKeyboardInput = !!value;
                     }
@@ -68577,18 +68600,15 @@ define('WinJS/Controls/SearchBox',[
 
                     // Detach winrt events.
                     if (this._focusOnKeyboardInput) {
-                        if (this._searchSuggestionManager) {
+                        if (!(this._searchSuggestionManager instanceof _SearchSuggestionManagerShim._SearchSuggestionManagerShim)) {
                             this._searchSuggestionManager.removeEventListener("requestingfocusonkeyboardinput", this._requestingFocusOnKeyboardInputHandlerBind);
+                        } else {
+                            this._updateKeydownCaptureListeners(_Global.top, false /*add*/);
                         }
-                    }
 
-                    if (this._searchSuggestions) {
-                        this._searchSuggestions.removeEventListener("vectorchanged", this._suggestionsChangedHandlerBind);
                     }
-
-                    if (this._searchSuggestionManager) {
-                        this._searchSuggestionManager.removeEventListener("suggestionsrequested", this._suggestionsRequestedHandlerBind);
-                    }
+                    this._searchSuggestions.removeEventListener("vectorchanged", this._suggestionsChangedHandlerBind);
+                    this._searchSuggestionManager.removeEventListener("suggestionsrequested", this._suggestionsRequestedHandlerBind);
 
                     this._searchSuggestionManager = null;
                     this._searchSuggestions = null;
@@ -69359,7 +69379,7 @@ define('WinJS/Controls/SearchBox',[
                     }
                 },
 
-                _searchBoxFocusInHandler: function SearchBox__searchBoxFocusInHandler(event) {
+                _searchBoxFocusHandler: function SearchBox__searchBoxFocusHandler(event) {
                     // Refresh hit highlighting if text has changed since focus was present
                     // This can happen if the user committed a suggestion previously.
                     if (this._inputElement.value !== this._prevQueryText) {
@@ -69395,7 +69415,7 @@ define('WinJS/Controls/SearchBox',[
                     this._updateSearchButtonClass();
                 },
 
-                _searchBoxFocusOutHandler: function SearchBox_searchBoxFocusOutHandler(event) {
+                _searchBoxBlurHandler: function SearchBox_searchBoxBlurHandler(event) {
                     this._hideFlyoutIfLeavingSearchControl(event.relatedTarget);
                     _ElementUtilities.removeClass(this.element, ClassName.searchBoxInputFocus);
                     this._updateSearchButtonClass();
@@ -69450,13 +69470,13 @@ define('WinJS/Controls/SearchBox',[
                     this._inputElement.addEventListener("keydown", this._keyDownHandler.bind(this));
                     this._inputElement.addEventListener("keypress", this._keyPressHandler.bind(this));
                     this._inputElement.addEventListener("keyup", this._keyUpHandler.bind(this));
+                    this._inputElement.addEventListener("focus", this._searchBoxFocusHandler.bind(this));
+                    this._inputElement.addEventListener("blur", this._searchBoxBlurHandler.bind(this));
                     _ElementUtilities._addEventListener(this._inputElement, "pointerdown", this._inputPointerDownHandler.bind(this));
                     _ElementUtilities._addEventListener(this._flyoutDivElement, "pointerdown", this._flyoutPointerDownHandler.bind(this));
                     _ElementUtilities._addEventListener(this._flyoutDivElement, "pointerup", this._flyoutPointerReleasedHandler.bind(this));
                     _ElementUtilities._addEventListener(this._flyoutDivElement, "pointercancel", this._flyoutPointerReleasedHandler.bind(this));
                     _ElementUtilities._addEventListener(this._flyoutDivElement, "pointerout", this._flyoutPointerReleasedHandler.bind(this));
-                    _ElementUtilities._addEventListener(this.element, "focusin", this._searchBoxFocusInHandler.bind(this), false);
-                    _ElementUtilities._addEventListener(this.element, "focusout", this._searchBoxFocusOutHandler.bind(this), false);
 
                     this._inputElement.addEventListener("compositionstart", inputOrImeChangeHandler);
                     this._inputElement.addEventListener("compositionupdate", inputOrImeChangeHandler);
@@ -69535,12 +69555,8 @@ define('WinJS/Controls/SearchBox',[
                 },
 
                 _wireupWinRTEvents: function SearchBox_wireupWinRTEvents() {
-                    if (this._searchSuggestions) {
-                        this._searchSuggestions.addEventListener("vectorchanged", this._suggestionsChangedHandlerBind);
-                    }
-                    if (this._searchSuggestionManager) {
-                        this._searchSuggestionManager.addEventListener("suggestionsrequested", this._suggestionsRequestedHandlerBind);
-                    }
+                    this._searchSuggestions.addEventListener("vectorchanged", this._suggestionsChangedHandlerBind);
+                    this._searchSuggestionManager.addEventListener("suggestionsrequested", this._suggestionsRequestedHandlerBind);
                 },
 
                 _suggestionsChangedHandler: function SearchBox_suggestionsChangedHandler(event) {
@@ -69630,6 +69646,145 @@ define('WinJS/Controls/SearchBox',[
                         } catch (e) {
                         }
                     }
+                },
+
+                _keydownCaptureHandler: function SearchBox_keydownCaptureHandler(event) {
+                    if (this._focusOnKeyboardInput && this._shouldKeyTriggerTypeToSearch(event)) {
+                        this._requestingFocusOnKeyboardInputHandler(event);
+                    }
+                },
+
+                _frameLoadCaptureHandler: function SearchBox_frameLoadCaptureHandler(event) {
+                    if (this._focusOnKeyboardInput) {
+                        this._updateKeydownCaptureListeners(event.target.contentWindow, true /*add*/);
+                    }
+                },
+
+                _updateKeydownCaptureListeners: function SearchBox_updateTypeToSearchListeners(win, add) {
+                    // Register for child frame keydown events in order to support FocusOnKeyboardInput
+                    // when focus is in a child frame.  Also register for child frame load events so 
+                    // it still works after frame navigations.
+                    // Note: This won't catch iframes added programmatically later, but that can be worked
+                    // around by toggling FocusOnKeyboardInput off/on after the new iframe is added.
+                    try {
+                        if (add) {
+                            win.document.addEventListener('keydown', this._keydownCaptureHandlerBind, true);
+                        } else {
+                            win.document.removeEventListener('keydown', this._keydownCaptureHandlerBind, true);
+                        }
+                    } catch (e) { // if the IFrame crosses domains, we'll get a permission denied error                        
+                    }
+
+                    if (win.frames) {
+                        for (var i = 0, l = win.frames.length; i < l; i++) {
+                            var childWin = win.frames[i];
+                            this._updateKeydownCaptureListeners(childWin, add);
+
+                            try {
+                                if (add) {
+                                    if (childWin.frameElement) {
+                                        childWin.frameElement.addEventListener('load', this._frameLoadCaptureHandlerBind, true);
+                                    }
+                                } else {
+                                    if (childWin.frameElement) {
+                                        childWin.frameElement.removeEventListener('load', this._frameLoadCaptureHandlerBind, true);
+                                    }
+                                }
+                            } catch (e) { // if the IFrame crosses domains, we'll get a permission denied error                        
+                            }
+                        }
+                    }
+                },
+
+                _shouldKeyTriggerTypeToSearch: function SearchBox_shouldKeyTriggerTypeToSearch(event) {
+                    var shouldTrigger = false;
+                    // First, check if a metaKey is pressed (only applies to MacOS). If so, do nothing here.
+                    if (!event.metaKey) {
+                        // We also don't handle CTRL/ALT combinations, unless ALTGR is also set. Since there is no shortcut for checking AltGR,
+                        // we need to use getModifierState, however, Safari currently doesn't support this.
+                        if ((!event.ctrlKey && !event.altKey) || (event.getModifierState && event.getModifierState("AltGraph"))) {
+                            // Show on most keys for visible characters like letters, numbers, etc.
+                            switch (event.keyCode) {
+                                case 0x30:  //0x30 0 key
+                                case 0x31:  //0x31 1 key
+                                case 0x32:  //0x32 2 key
+                                case 0x33:  //0x33 3 key
+                                case 0x34:  //0x34 4 key
+                                case 0x35:  //0x35 5 key
+                                case 0x36:  //0x36 6 key
+                                case 0x37:  //0x37 7 key
+                                case 0x38:  //0x38 8 key
+                                case 0x39:  //0x39 9 key
+
+                                case 0x41:  //0x41 A key
+                                case 0x42:  //0x42 B key
+                                case 0x43:  //0x43 C key
+                                case 0x44:  //0x44 D key
+                                case 0x45:  //0x45 E key
+                                case 0x46:  //0x46 F key
+                                case 0x47:  //0x47 G key
+                                case 0x48:  //0x48 H key
+                                case 0x49:  //0x49 I key
+                                case 0x4A:  //0x4A J key
+                                case 0x4B:  //0x4B K key
+                                case 0x4C:  //0x4C L key
+                                case 0x4D:  //0x4D M key
+                                case 0x4E:  //0x4E N key
+                                case 0x4F:  //0x4F O key
+                                case 0x50:  //0x50 P key
+                                case 0x51:  //0x51 Q key
+                                case 0x52:  //0x52 R key
+                                case 0x53:  //0x53 S key
+                                case 0x54:  //0x54 T key
+                                case 0x55:  //0x55 U key
+                                case 0x56:  //0x56 V key
+                                case 0x57:  //0x57 W key
+                                case 0x58:  //0x58 X key
+                                case 0x59:  //0x59 Y key
+                                case 0x5A:  //0x5A Z key
+
+                                case 0x60:  // VK_NUMPAD0,             //0x60 Numeric keypad 0 key
+                                case 0x61:  // VK_NUMPAD1,             //0x61 Numeric keypad 1 key
+                                case 0x62:  // VK_NUMPAD2,             //0x62 Numeric keypad 2 key
+                                case 0x63:  // VK_NUMPAD3,             //0x63 Numeric keypad 3 key
+                                case 0x64:  // VK_NUMPAD4,             //0x64 Numeric keypad 4 key
+                                case 0x65:  // VK_NUMPAD5,             //0x65 Numeric keypad 5 key
+                                case 0x66:  // VK_NUMPAD6,             //0x66 Numeric keypad 6 key
+                                case 0x67:  // VK_NUMPAD7,             //0x67 Numeric keypad 7 key
+                                case 0x68:  // VK_NUMPAD8,             //0x68 Numeric keypad 8 key
+                                case 0x69:  // VK_NUMPAD9,             //0x69 Numeric keypad 9 key
+                                case 0x6A:  // VK_MULTIPLY,            //0x6A Multiply key
+                                case 0x6B:  // VK_ADD,                 //0x6B Add key
+                                case 0x6C:  // VK_SEPARATOR,           //0x6C Separator key
+                                case 0x6D:  // VK_SUBTRACT,            //0x6D Subtract key
+                                case 0x6E:  // VK_DECIMAL,             //0x6E Decimal key
+                                case 0x6F:  // VK_DIVIDE,              //0x6F Divide key
+
+                                case 0xBA:  // VK_OEM_1,               //0xBA Used for miscellaneous characters; it can vary by keyboard. For the US standard keyboard, the ';:' key 
+                                case 0xBB:  // VK_OEM_PLUS,            //0xBB For any country/region, the '+' key
+                                case 0xBC:  // VK_OEM_COMMA,           //0xBC For any country/region, the ',' key
+                                case 0xBD:  // VK_OEM_MINUS,           //0xBD For any country/region, the '-' key
+                                case 0xBE:  // VK_OEM_PERIOD,          //0xBE For any country/region, the '.' key
+                                case 0xBF:  // VK_OEM_2,               //0xBF Used for miscellaneous characters; it can vary by keyboard. For the US standard keyboard, the '/?' key 
+                                case 0xC0:  // VK_OEM_3,               //0xC0 Used for miscellaneous characters; it can vary by keyboard. For the US standard keyboard, the '`~' key 
+
+                                case 0xDB:  // VK_OEM_4,               //0xDB Used for miscellaneous characters; it can vary by keyboard. For the US standard keyboard, the '[{' key
+                                case 0xDC:  // VK_OEM_5,               //0xDC Used for miscellaneous characters; it can vary by keyboard. For the US standard keyboard, the '\|' key
+                                case 0xDD:  // VK_OEM_6,               //0xDD Used for miscellaneous characters; it can vary by keyboard. For the US standard keyboard, the ']}' key
+                                case 0xDE:  // VK_OEM_7,               //0xDE Used for miscellaneous characters; it can vary by keyboard. For the US standard keyboard, the 'single-quote/double-quote' key
+                                case 0xDF:  // VK_OEM_8,               //0xDF Used for miscellaneous characters; it can vary by keyboard.
+
+                                case 0xE2:  // VK_OEM_102,             //0xE2 Either the angle bracket key or the backslash key on the RT 102-key keyboard
+
+                                case 0xE5:  // VK_PROCESSKEY,          //0xE5 IME PROCESS key
+
+                                case 0xE7:  // VK_PACKET,              //0xE7 Used to pass Unicode characters as if they were keystrokes. The VK_PACKET key is the low word of a 32-bit Virtual Key value used for non-keyboard input methods. For more information, see Remark in KEYBDINPUT, SendInput, WM_KEYDOWN, and WM_KEYUP
+                                    shouldTrigger = true;
+                                    break;
+                            }
+                        }
+                    }
+                    return shouldTrigger;
                 },
 
                 _hasLinguisticDetailsChanged: function SearchBox_hasLinguisticDetailsChanged(newLinguisticDetails) {
@@ -72726,4 +72881,4 @@ define('WinJS',[
 // Copyright (c) Microsoft Open Technologies, Inc.  All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
     return require('WinJS');
 }));
-WinJS.Utilities._writeProfilerMark("WinJS.2.1 2.0.1.WinJS.2014.7.24 WinJS.js,StopTM");
+WinJS.Utilities._writeProfilerMark("WinJS.2.1 2.0.1.WinJS.2014.7.25 WinJS.js,StopTM");
